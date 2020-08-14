@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Add your Pet Detail</string>
+    <string name="app_name">WOOF!</string>
+    <string name="func_name">Add your Pet Detail</string>
+    <string name="addPhoto_name">Add Photo</string>
     <string name="Pet_Name"> Name</string>
     <string name="Pet_size"> Select one</string>
     <string name="Pet_Breed"> Breed</string>
@@ -12,5 +14,8 @@
     <string name="petgender">*Gender</string>
     <string name="petage">*How old is your pet?</string>
     <string name="petvac">*Is your pet vaccinated</string>
-    <string name="Advance">Advance</string>
+    <string name="Advance">ADVANCE</string>
+    <string name="addPhoto">Add</string>
+    <string name="confirm">CONFIRM</string>
+
 </resources>
