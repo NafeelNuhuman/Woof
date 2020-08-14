@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">WOOF!</string>
+    <string name="app_name">Accesories</string>
+    <string name="search_icon">Search</string>
+    <string name="sidebar_icon">Sidebar</string>
+    <string name="title">Accessories</string>
+    <string name="Collars">Collars</string>
+    <string name="dog_food">Dog Food</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_image">Item Image</string>
+    <string name="Item_Price">LKR. XXXXX</string>
+    <string name="item_name2">Item Name</string>
+    <string name="item_image2">Item Image</string>
+    <string name="Item_Price2">LKR. XXXXX</string>
+    <string name="title1">Upload Accessory</string>
+    <string name="title2">Manage Accessories</string>
+
 </resources>
