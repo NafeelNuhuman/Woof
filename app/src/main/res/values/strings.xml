@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">WOOF!</string>
+    <string name="app_name">Add your Pet Detail</string>
+    <string name="Pet_Name"> Name</string>
+    <string name="Pet_size"> Select one</string>
+    <string name="Pet_Breed"> Breed</string>
+    <string name="Pet_Gender"> Gender</string>
+    <string name="Pet_Age"> Age</string>
+    <string name="Pet_Vac"> Select one</string>
+    <string name="petname">*Enter your pet name</string>
+    <string name="petsize">What is the size of your pet?</string>
+    <string name="petbreed">*What breed is it?</string>
+    <string name="petgender">*Gender</string>
+    <string name="petage">*How old is your pet?</string>
+    <string name="petvac">*Is your pet vaccinated</string>
+    <string name="Advance">Advance</string>
 </resources>
