@@ -17,5 +17,10 @@
     <string name="Advance">ADVANCE</string>
     <string name="addPhoto">Add</string>
     <string name="confirm">CONFIRM</string>
+    <string name="title">Your Pets</string>
+    <string name="search">Search</string>
+    <string name="sidebar_icon">Sidebar</string>
+    <string name="manage">Manage</string>
+
 
 </resources>
