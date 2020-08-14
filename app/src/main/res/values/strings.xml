@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">WOOF!</string>
+    <string name="app_name">Share your story </string>
+    <string name="Descrip01share">Share your story</string>
+    <string name="Title_Share">Summarize your story in few words</string>
+    <string name="Title_Sh">Title</string>
+    <string name="Description_Sh"> Description</string>
+    <string name="Descrip_Share">Description</string>
+    <string name="Share_Button">SHARE</string>
+    <string name="Story">Story title</string>
+    <string name="storydate">Date</string>
+    <string name="Delete_button">Delete</string>
+    <string name="story_des_my_story">Greyhound divisively hello coldly wonderfully marginally far...</string>
+    <string name="App_shareYourStory">Share your story</string>
+    <string name="App_myStories">My Stories</string>
+    <string name="App_stories">Stories</string>
+    <string name="Submitted_person_name">Submitted By :</string>
+    <string name="Person">User Name</string>
+    <string name="Share_your_story_Button">Share your stories</string>
 </resources>
