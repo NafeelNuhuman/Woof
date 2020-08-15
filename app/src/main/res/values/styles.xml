@@ -6,5 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--Edit Review Styles-->
+    <style name="editReviewRating" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="confirmButton" parent="ThemeOverlay.AppCompat.Light" />
+    <!--Edit Review Styles-->
 
 </resources>
