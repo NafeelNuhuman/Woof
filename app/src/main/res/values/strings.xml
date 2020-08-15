@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">WOOF!</string>
+    <!--Edit Review Strings-->
+    <string name="reviewDescription">Item Description</string>
+    <string name="orderCode">Item Code</string>
+    <string name="itemName">Item Name</string>
+    <string name="tellUsMore">Tell Us More...</string>
+    <string name="feedback">Enter</string>
+    <string name="confirmButton">Confirm</string>
+    <!--Edit Review Strings-->
 </resources>
