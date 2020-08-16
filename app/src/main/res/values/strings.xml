@@ -7,5 +7,10 @@
     <string name="tellUsMore">Tell Us More...</string>
     <string name="feedback">Enter</string>
     <string name="confirmButton">Confirm</string>
+    <string name="myReview">   My Reviews</string>
+    <string name="editReview">   Edit Review</string>
+    <string name="reviewItem">   Review Item</string>
+    <string name="reviewButton">   Review</string>
+    <string name="itemList">   Items List</string>
     <!--Edit Review Strings-->
 </resources>
