@@ -21,6 +21,8 @@
     <string name="search">Search</string>
     <string name="sidebar_icon">Sidebar</string>
     <string name="manage">Manage</string>
-
+    <string name="adoption">Pets for Adoption</string>
+    <string name="Sale">Pets for Sale</string>
+    <string name="Dogs">Dogs</string>
 
 </resources>
