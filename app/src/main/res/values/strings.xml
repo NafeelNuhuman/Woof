@@ -24,5 +24,8 @@
     <string name="adoption">Pets for Adoption</string>
     <string name="Sale">Pets for Sale</string>
     <string name="Dogs">Dogs</string>
+    <string name="Desc">Description</string>
+    <string name="contact">Contact</string>
+
 
 </resources>
