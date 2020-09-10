@@ -1,6 +1,7 @@
 <resources>
+    <string name="app_name">WOOF!</string>
+  
     <!--Nethmini-->
-    <string name="app_name">Share your story </string>
     <string name="Descrip01share">Share your story</string>
     <string name="Title_Share">Summarize your story in few words</string>
     <string name="Title_Sh">Title</string>
@@ -18,7 +19,34 @@
     <string name="Person">User Name</string>
     <string name="Share_your_story_Button">Share your stories</string>
 
-    <string name="app_name">WOOF!</string>
+    <!--Nimran-->
+    <string name="func_name">Add your Pet Detail</string>
+    <string name="addPhoto_name">Add Photo</string>
+    <string name="Pet_Name"> Name</string>
+    <string name="Pet_size"> Select one</string>
+    <string name="Pet_Breed"> Breed</string>
+    <string name="Pet_Gender"> Gender</string>
+    <string name="Pet_Age"> Age</string>
+    <string name="Pet_Vac"> Select one</string>
+    <string name="petname">*Enter your pet name</string>
+    <string name="petsize">What is the size of your pet?</string>
+    <string name="petbreed">*What breed is it?</string>
+    <string name="petgender">*Gender</string>
+    <string name="petage">*How old is your pet?</string>
+    <string name="petvac">*Is your pet vaccinated</string>
+    <string name="Advance">ADVANCE</string>
+    <string name="addPhoto">Add</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="title">Your Pets</string>
+    <string name="search">Search</string>
+    <string name="sidebar_icon">Sidebar</string>
+    <string name="manage">Manage</string>
+    <string name="adoption">Pets for Adoption</string>
+    <string name="Sale">Pets for Sale</string>
+    <string name="Dogs">Dogs</string>
+    <string name="Desc">Description</string>
+    <string name="contact">Contact</string>
+
     <!--Atchu-->
     <string name="reviewDescription">Item Description</string>
     <string name="orderCode">Item Code</string>
@@ -33,7 +61,6 @@
     <string name="itemList">   Items List</string>
   
     <!--Nafeel-->
-    <string name="app_name">Accesories</string>
     <string name="search_icon">Search</string>
     <string name="sidebar_icon">Sidebar</string>
     <string name="title">Accessories</string>
