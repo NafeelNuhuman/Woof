@@ -37,9 +37,8 @@
     <string name="Advance">ADVANCE</string>
     <string name="addPhoto">Add</string>
     <string name="confirm">CONFIRM</string>
-    <string name="title">Your Pets</string>
+    <string name="title_pets">Your Pets</string>
     <string name="search">Search</string>
-    <string name="sidebar_icon">Sidebar</string>
     <string name="manage">Manage</string>
     <string name="adoption">Pets for Adoption</string>
     <string name="Sale">Pets for Sale</string>
@@ -81,7 +80,5 @@
     <string name="product_images">Images</string>
     <string name="Edit_button">Edit</string>
     <string name="View_reviews">View Reviews</string>
-
-
 
 </resources>
