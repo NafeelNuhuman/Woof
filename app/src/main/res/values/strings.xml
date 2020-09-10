@@ -1,4 +1,5 @@
 <resources>
+    <!--Nethmini-->
     <string name="app_name">Share your story </string>
     <string name="Descrip01share">Share your story</string>
     <string name="Title_Share">Summarize your story in few words</string>
@@ -16,4 +17,44 @@
     <string name="Submitted_person_name">Submitted By :</string>
     <string name="Person">User Name</string>
     <string name="Share_your_story_Button">Share your stories</string>
+
+    <string name="app_name">WOOF!</string>
+    <!--Atchu-->
+    <string name="reviewDescription">Item Description</string>
+    <string name="orderCode">Item Code</string>
+    <string name="itemName">Item Name</string>
+    <string name="tellUsMore">Tell Us More...</string>
+    <string name="feedback">Enter</string>
+    <string name="confirmButton">Confirm</string>
+    <string name="myReview">   My Reviews</string>
+    <string name="editReview">   Edit Review</string>
+    <string name="reviewItem">   Review Item</string>
+    <string name="reviewButton">   Review</string>
+    <string name="itemList">   Items List</string>
+  
+    <!--Nafeel-->
+    <string name="app_name">Accesories</string>
+    <string name="search_icon">Search</string>
+    <string name="sidebar_icon">Sidebar</string>
+    <string name="title">Accessories</string>
+    <string name="Collars">Collars</string>
+    <string name="dog_food">Dog Food</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_image">Item Image</string>
+    <string name="Item_Price">LKR. XXXXX</string>
+    <string name="item_name2">Item Name</string>
+    <string name="item_image2">Item Image</string>
+    <string name="Item_Price2">LKR. XXXXX</string>
+    <string name="title1">Upload Accessory</string>
+    <string name="title2">Manage Accessories</string>
+    <string name="title3">Update Accessory</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_price">Price</string>
+    <string name="product_des">Product Description</string>
+    <string name="product_images">Images</string>
+    <string name="Edit_button">Edit</string>
+    <string name="View_reviews">View Reviews</string>
+
+
+
 </resources>
