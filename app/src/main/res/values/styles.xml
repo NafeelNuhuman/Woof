@@ -1,6 +1,8 @@
 <resources>
     <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -8,6 +10,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <!--Edit Review Styles  -->
+        <style name="editReviewRating" parent="ThemeOverlay.AppCompat.Light" />
+        <style name="confirmButton" parent="ThemeOverlay.AppCompat.Light"/>
+        <!--Edit Review Styles-->
 
 
 </resources>

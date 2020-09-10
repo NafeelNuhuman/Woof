@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".clickReview">
+         
+        </activity>
+      <activity android:name=".reviewItem">
+           
+        </activity>
+        <activity android:name=".editReview"></activity>
+
         <activity android:name=".singleItemView">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

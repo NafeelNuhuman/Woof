@@ -1,4 +1,20 @@
 <resources>
+
+    <string name="app_name">WOOF!</string>
+    <!--Edit Review Strings-->
+    <string name="reviewDescription">Item Description</string>
+    <string name="orderCode">Item Code</string>
+    <string name="itemName">Item Name</string>
+    <string name="tellUsMore">Tell Us More...</string>
+    <string name="feedback">Enter</string>
+    <string name="confirmButton">Confirm</string>
+    <string name="myReview">   My Reviews</string>
+    <string name="editReview">   Edit Review</string>
+    <string name="reviewItem">   Review Item</string>
+    <string name="reviewButton">   Review</string>
+    <string name="itemList">   Items List</string>
+    <!--Edit Review Strings-->
+
     <string name="app_name">Accesories</string>
     <string name="search_icon">Search</string>
     <string name="sidebar_icon">Sidebar</string>
