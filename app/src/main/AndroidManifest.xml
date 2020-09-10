@@ -9,34 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".clickReview">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+         
         </activity>
-        <activity android:name=".reviewItem">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+      <activity android:name=".reviewItem">
+           
         </activity>
-        <activity android:name=".myReviews">
+        <activity android:name=".editReview"></activity>
+
+        <activity android:name=".singleItemView">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".editReview">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".updateAccessory" />
+        <activity android:name=".manageAccessories" />
+        <activity android:name=".uploadAccessory">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".Accesories" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
