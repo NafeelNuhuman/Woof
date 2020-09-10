@@ -9,17 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".selectedDogview"> <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
         <activity android:name=".viewAllpets">
-
+        <activity android:name=".singleStoryView">
+        </activity>
+        <activity android:name=".clickReview">
+        </activity>
+        <activity android:name=".reviewItem">
+        </activity>
+        <activity android:name=".editReview">
+        </activity>
+        <activity android:name=".singleItemView">
         </activity>
         <activity android:name=".viewMypet"></activity>
         <activity android:name=".uploadPet" />
         <activity android:name=".addDog" />
+        <activity android:name=".stories2">
+        </activity>
+        <activity android:name=".mystories"></activity>
+        <activity android:name=".stories"></activity>
+        <activity android:name=".updateAccessory" />
+        <activity android:name=".manageAccessories" />
+        <activity android:name=".uploadAccessory">
+        </activity>
+        <activity android:name=".Accesories" />
+        <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>
