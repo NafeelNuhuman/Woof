@@ -1,6 +1,52 @@
 <resources>
     <string name="app_name">WOOF!</string>
-    <!--Edit Review Strings-->
+  
+    <!--Nethmini-->
+    <string name="Descrip01share">Share your story</string>
+    <string name="Title_Share">Summarize your story in few words</string>
+    <string name="Title_Sh">Title</string>
+    <string name="Description_Sh"> Description</string>
+    <string name="Descrip_Share">Description</string>
+    <string name="Share_Button">SHARE</string>
+    <string name="Story">Story title</string>
+    <string name="storydate">Date</string>
+    <string name="Delete_button">Delete</string>
+    <string name="story_des_my_story">Greyhound divisively hello coldly wonderfully marginally far...</string>
+    <string name="App_shareYourStory">Share your story</string>
+    <string name="App_myStories">My Stories</string>
+    <string name="App_stories">Stories</string>
+    <string name="Submitted_person_name">Submitted By :</string>
+    <string name="Person">User Name</string>
+    <string name="Share_your_story_Button">Share your stories</string>
+
+    <!--Nimran-->
+    <string name="func_name">Add your Pet Detail</string>
+    <string name="addPhoto_name">Add Photo</string>
+    <string name="Pet_Name"> Name</string>
+    <string name="Pet_size"> Select one</string>
+    <string name="Pet_Breed"> Breed</string>
+    <string name="Pet_Gender"> Gender</string>
+    <string name="Pet_Age"> Age</string>
+    <string name="Pet_Vac"> Select one</string>
+    <string name="petname">*Enter your pet name</string>
+    <string name="petsize">What is the size of your pet?</string>
+    <string name="petbreed">*What breed is it?</string>
+    <string name="petgender">*Gender</string>
+    <string name="petage">*How old is your pet?</string>
+    <string name="petvac">*Is your pet vaccinated</string>
+    <string name="Advance">ADVANCE</string>
+    <string name="addPhoto">Add</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="title_pets">Your Pets</string>
+    <string name="search">Search</string>
+    <string name="manage">Manage</string>
+    <string name="adoption">Pets for Adoption</string>
+    <string name="Sale">Pets for Sale</string>
+    <string name="Dogs">Dogs</string>
+    <string name="Desc">Description</string>
+    <string name="contact">Contact</string>
+
+    <!--Atchu-->
     <string name="reviewDescription">Item Description</string>
     <string name="orderCode">Item Code</string>
     <string name="itemName">Item Name</string>
@@ -12,5 +58,27 @@
     <string name="reviewItem">   Review Item</string>
     <string name="reviewButton">   Review</string>
     <string name="itemList">   Items List</string>
-    <!--Edit Review Strings-->
+  
+    <!--Nafeel-->
+    <string name="search_icon">Search</string>
+    <string name="sidebar_icon">Sidebar</string>
+    <string name="title">Accessories</string>
+    <string name="Collars">Collars</string>
+    <string name="dog_food">Dog Food</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_image">Item Image</string>
+    <string name="Item_Price">LKR. XXXXX</string>
+    <string name="item_name2">Item Name</string>
+    <string name="item_image2">Item Image</string>
+    <string name="Item_Price2">LKR. XXXXX</string>
+    <string name="title1">Upload Accessory</string>
+    <string name="title2">Manage Accessories</string>
+    <string name="title3">Update Accessory</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_price">Price</string>
+    <string name="product_des">Product Description</string>
+    <string name="product_images">Images</string>
+    <string name="Edit_button">Edit</string>
+    <string name="View_reviews">View Reviews</string>
+
 </resources>
