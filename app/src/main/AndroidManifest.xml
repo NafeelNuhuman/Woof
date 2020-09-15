@@ -19,10 +19,7 @@
 
         <!--Nimran-->
         <activity android:name=".selectedDogview">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".viewAllpets"></activity>
         <activity android:name=".viewMypet"></activity>
@@ -39,7 +36,12 @@
 
         <!--Nafeel-->
         <activity android:name=".updateAccessory" />
-        <activity android:name=".manageAccessories" />
+        <activity android:name=".manageAccessories" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".uploadAccessory">
         </activity>
         <activity android:name=".Accesories" />
