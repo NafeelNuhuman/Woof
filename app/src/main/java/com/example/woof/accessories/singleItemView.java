@@ -1,8 +1,10 @@
-package com.example.woof;
+package com.example.woof.accessories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.woof.R;
 
 public class singleItemView extends AppCompatActivity {
 

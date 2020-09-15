@@ -1,14 +1,16 @@
-package com.example.woof;
+package com.example.woof.reviews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class myReviews extends AppCompatActivity {
+import com.example.woof.R;
+
+public class reviewItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_reviews);
+        setContentView(R.layout.activity_review_item);
     }
 }

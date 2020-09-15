@@ -1,14 +1,16 @@
-package com.example.woof;
+package com.example.woof.stories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class viewMypet extends AppCompatActivity {
+import com.example.woof.R;
+
+public class mystories extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_mypet);
+        setContentView(R.layout.activity_mystories);
     }
 }

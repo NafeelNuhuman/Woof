@@ -1,14 +1,16 @@
-package com.example.woof;
+package com.example.woof.dogs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class manageAccessories extends AppCompatActivity {
+import com.example.woof.R;
+
+public class addDog extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_accessories);
+        setContentView(R.layout.activity_add_dog);
     }
 }

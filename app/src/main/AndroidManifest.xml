@@ -11,41 +11,41 @@
         android:theme="@style/AppTheme">
 
         <!--Nethmini-->
-        <activity android:name=".mystories"></activity>
-        <activity android:name=".stories"></activity>
-        <activity android:name=".singleStoryView">
+        <activity android:name=".stories.mystories"></activity>
+        <activity android:name=".stories.stories"></activity>
+        <activity android:name=".stories.singleStoryView">
         </activity>
-        <activity android:name=".stories2"></activity>
+        <activity android:name=".stories.stories2"></activity>
 
         <!--Nimran-->
-        <activity android:name=".selectedDogview">
+        <activity android:name=".dogs.selectedDogview">
 
         </activity>
-        <activity android:name=".viewAllpets"></activity>
-        <activity android:name=".viewMypet"></activity>
-        <activity android:name=".uploadPet"></activity>
-        <activity android:name=".addDog" ></activity>
+        <activity android:name=".dogs.viewAllpets"></activity>
+        <activity android:name=".dogs.viewMypet"></activity>
+        <activity android:name=".dogs.uploadPet"></activity>
+        <activity android:name=".dogs.addDog" ></activity>
 
         <!--Atchu-->
-        <activity android:name=".clickReview">
+        <activity android:name=".reviews.clickReview">
         </activity>
-        <activity android:name=".reviewItem">
+        <activity android:name=".reviews.reviewItem">
         </activity>
-        <activity android:name=".editReview">
+        <activity android:name=".reviews.editReview">
         </activity>
 
         <!--Nafeel-->
-        <activity android:name=".updateAccessory" />
-        <activity android:name=".manageAccessories" >
+        <activity android:name=".accessories.updateAccessory" />
+        <activity android:name=".accessories.manageAccessories" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".uploadAccessory">
+        <activity android:name=".accessories.uploadAccessory">
         </activity>
-        <activity android:name=".Accesories" />
-        <activity android:name=".singleItemView">
+        <activity android:name=".accessories.Accesories" />
+        <activity android:name=".accessories.singleItemView">
         </activity>
 
 

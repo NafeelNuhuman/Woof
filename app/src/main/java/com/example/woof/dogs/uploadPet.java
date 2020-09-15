@@ -1,14 +1,16 @@
-package com.example.woof;
+package com.example.woof.dogs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class editReview extends AppCompatActivity {
+import com.example.woof.R;
+
+public class uploadPet extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_review);
+        setContentView(R.layout.activity_upload_pet);
     }
 }

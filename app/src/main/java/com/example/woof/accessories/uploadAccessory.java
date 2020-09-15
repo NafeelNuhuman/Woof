@@ -1,14 +1,16 @@
-package com.example.woof;
+package com.example.woof.accessories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class updateAccessory extends AppCompatActivity {
+import com.example.woof.R;
+
+public class uploadAccessory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_accessory);
+        setContentView(R.layout.activity_upload_accessory);
     }
 }
