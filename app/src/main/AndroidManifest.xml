@@ -9,23 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".manageMyDog"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".SignUp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".Login"></activity> <!-- Nethmini -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".manageMyDog">
+
+        </activity>
+        <activity android:name=".Login" >
+
+        </activity>
+
+        <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
         <activity android:name=".stories.stories2" /> <!-- Nimran -->
         <activity android:name=".dogs.selectedDogview" />
-        <activity android:name=".dogs.viewAllpets"></activity>
+        <activity android:name=".dogs.viewAllpets" />
         <activity android:name=".dogs.viewMypet" />
         <activity android:name=".dogs.uploadPet" />
-        <activity android:name=".dogs.addDog">
-
-        </activity> <!-- Atchu -->
+        <activity android:name=".dogs.addDog"></activity> <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
         <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
