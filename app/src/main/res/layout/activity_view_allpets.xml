@@ -6,7 +6,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBG">
+    android:background="@color/colorBG"
+    android:onClick="movePagetoselected">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
@@ -92,7 +93,8 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginLeft="2dp">
+                    android:layout_marginLeft="2dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image1"
@@ -133,7 +135,8 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image2"
@@ -174,7 +177,8 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image3"
@@ -218,7 +222,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="336dp"
         android:text="@string/Sale"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -228,7 +232,7 @@
         android:layout_width="415dp"
         android:layout_height="221dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="396dp"
 
         android:scrollbars="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -248,7 +252,8 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginLeft="2dp">
+                    android:layout_marginLeft="2dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image4"
@@ -289,7 +294,8 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image5"
@@ -330,7 +336,8 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:onClick="movePagetoselected">
 
                     <ImageView
                         android:id="@+id/image6"

@@ -85,6 +85,7 @@
         android:layout_width="199dp"
         android:layout_height="59dp"
         android:background="@drawable/advnc_button"
+        android:onClick="movePagetomanage"
         android:text="@string/confirm"
         android:textColor="@android:color/background_light"
         android:textColorHighlight="@android:color/background_light"

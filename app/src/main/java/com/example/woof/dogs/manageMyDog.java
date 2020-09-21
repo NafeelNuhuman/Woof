@@ -1,8 +1,10 @@
-package com.example.woof;
+package com.example.woof.dogs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.woof.R;
 
 public class manageMyDog extends AppCompatActivity {
 
@@ -11,4 +13,6 @@ public class manageMyDog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_my_dog);
     }
+
+
 }

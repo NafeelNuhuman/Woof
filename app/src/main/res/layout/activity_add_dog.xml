@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBG"
+    android:onClick="movePage"
     tools:context=".dogs.addDog">
 
     <EditText
@@ -17,6 +18,7 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:paddingLeft="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -34,6 +36,7 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:paddingLeft="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,10 +50,11 @@
         android:layout_height="43dp"
         android:background="@drawable/txt_background"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/Pet_Vac"
+        android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:paddingLeft="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -64,8 +68,9 @@
         android:layout_height="43dp"
         android:background="@drawable/txt_background"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/Pet_Age"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,12 +90,13 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:paddingLeft="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintVertical_bias="0.141" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -102,6 +108,7 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:paddingLeft="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -197,6 +204,7 @@
         android:layout_height="48dp"
 
         android:background="@drawable/advnc_button"
+        android:onClick="movePage"
         android:text="@string/Advance"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
