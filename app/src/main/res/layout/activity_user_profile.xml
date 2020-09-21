@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userProfile">
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="173dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="36dp"
+        android:text="Full Name"
+        android:textColor="#000000"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="97dp"
+        android:layout_height="29dp"
+        android:paddingLeft="45px"
+        android:text="User"
+        android:textColor="#CA8080"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="0.046"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="97dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="68dp"
+        android:paddingLeft="45px"
+        android:text="Orders"
+        android:textColor="#CA8080"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/textView44"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="102dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="88dp"
+        android:paddingLeft="45px"
+        android:text="Dogs"
+        android:textColor="#CA8080"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493"
+        tools:layout_editor_absoluteX="21dp" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="105dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="104dp"
+        android:paddingLeft="45px"
+        android:text="Stories"
+        android:textColor="#CA8080"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="97dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="72dp"
+        android:paddingLeft="45px"
+        android:text="Reviews"
+        android:textColor="#CA8080"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView52"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="45px"
+        android:text="User Details"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView43"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:paddingLeft="45px"
+        android:text="Purchase History"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView46"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="moveToAddDogs"
+        android:paddingLeft="45px"
+        android:text="Add Dog"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView51"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        app:layout_constraintVertical_bias="0.2"
+        tools:layout_editor_absoluteX="43dp" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="moveToMyDogs"
+        android:paddingLeft="45px"
+        android:text="My Dogs"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="45px"
+        android:text="My Stories"
+        android:textSize="20dp"
+        app:layout_constraintTop_toTopOf="@+id/textView52"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="45px"
+        android:text="My reviews"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        tools:layout_editor_absoluteX="21dp" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="45px"
+        android:text="Shipping Address"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView47"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="165dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView42"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
