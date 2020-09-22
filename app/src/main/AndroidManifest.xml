@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        
+        <!-- Nimran -->
+        <activity android:name=".userProfile"> </activity>
+        <activity android:name=".dogs.selectedDogview" />
+        <activity android:name=".dogs.viewAllpets">
+        </activity>
+        <activity android:name=".dogs.uploadPet" />
+        <activity android:name=".dogs.addDog"></activity>
+        <activity android:name=".dogs.manageMyDog"></activity>
+        <!-- Other -->
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".Login">
         <activity android:name=".other.cart"></activity>
         <activity android:name=".other.Home">
             <intent-filter>
@@ -17,24 +29,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Nethmini -->
+        </activity> 
+          <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> <!-- Nimran -->
-        <activity android:name=".dogs.selectedDogview" />
-        <activity android:name=".dogs.viewAllpets" />
-        <activity android:name=".dogs.viewMypet" />
-        <activity android:name=".dogs.uploadPet" />
-        <activity android:name=".dogs.addDog" /> <!-- Atchu -->
+        <activity android:name=".stories.stories2" /> 
+        
+          <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
-        <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
+        <activity android:name=".reviews.editReview" /> 
+          <!-- Nafeel -->
         <activity android:name=".Accessories.updateAccessory" />
         <activity android:name=".Accessories.manageAccessories"></activity>
         <activity android:name=".Accessories.uploadAccessory" />
         <activity android:name=".Accessories.Accesories" />
         <activity android:name=".Accessories.singleItemView" />
+
 
     </application>
 

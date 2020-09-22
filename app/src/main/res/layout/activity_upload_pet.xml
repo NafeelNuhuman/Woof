@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBG"
     tools:context=".dogs.uploadPet">
 
     <androidx.appcompat.widget.Toolbar
@@ -30,10 +31,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="182dp"
-        android:layout_height="39dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
         android:background="@drawable/advnc_button"
         android:text="@string/addPhoto"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +52,9 @@
         android:background="@drawable/txt_background"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Add any description if you want to..."
+        android:text="  Add any description if you want to..."
         android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/tertiary_text_light"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,6 +85,7 @@
         android:layout_width="199dp"
         android:layout_height="59dp"
         android:background="@drawable/advnc_button"
+        android:onClick="movePagetomanage"
         android:text="@string/confirm"
         android:textColor="@android:color/background_light"
         android:textColorHighlight="@android:color/background_light"
