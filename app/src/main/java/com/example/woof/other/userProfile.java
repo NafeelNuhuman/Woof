@@ -1,4 +1,4 @@
-package com.example.woof;
+package com.example.woof.other;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.woof.R;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
 import com.example.woof.dogs.uploadPet;

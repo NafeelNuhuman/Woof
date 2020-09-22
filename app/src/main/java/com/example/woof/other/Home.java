@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.woof.Accessories.Accesories;
+import com.example.woof.accessories.Accesories;
 import com.example.woof.R;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.stories.stories;

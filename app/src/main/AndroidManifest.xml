@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         
         <!-- Nimran -->
-        <activity android:name=".userProfile"> </activity>
+        <activity android:name=".other.userProfile"> </activity>
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets">
         </activity>
@@ -23,8 +23,8 @@
         <activity android:name=".reviews.registerOptions">
         </activity>
         <activity android:name=".reviews.register" />
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".Login">
+        <activity android:name=".other.SignUp"></activity>
+        <activity android:name=".other.Login"></activity>
         <activity android:name=".other.cart"></activity>
         <activity android:name=".other.Home">
             <intent-filter>
@@ -42,13 +42,14 @@
           <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
-        <activity android:name=".reviews.editReview" /> 
+        <activity android:name=".reviews.editReview" />
+
           <!-- Nafeel -->
-        <activity android:name=".Accessories.updateAccessory" />
-        <activity android:name=".Accessories.manageAccessories"></activity>
-        <activity android:name=".Accessories.uploadAccessory" />
-        <activity android:name=".Accessories.Accesories" />
-        <activity android:name=".Accessories.singleItemView" />
+        <activity android:name=".accessories.updateAccessory" />
+        <activity android:name=".accessories.manageAccessories"></activity>
+        <activity android:name=".accessories.uploadAccessory" />
+        <activity android:name=".accessories.Accesories" />
+        <activity android:name=".accessories.singleItemView" />
 
 
     </application>

@@ -67,7 +67,7 @@
     <string name="regCEmail">Email</string>
     <string name="regCPhone">Phone</string>
     <string name="regCPwd">Password</string>
-    <string name="regCConPwd">Confirm Password</string>
+    <string name="regComPwd">Confirm Password</string>
     <string name="regBtn">Register</string>
     <string name="regOchoice">Register As</string>
 

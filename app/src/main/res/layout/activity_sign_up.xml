@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBG"
-    tools:context=".SignUp">
+    tools:context=".other.SignUp">
 
     <ImageView
         android:id="@+id/imageView8"
