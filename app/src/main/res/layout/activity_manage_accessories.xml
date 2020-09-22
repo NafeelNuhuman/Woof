@@ -77,7 +77,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/btnReg"
                         android:layout_width="119dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"

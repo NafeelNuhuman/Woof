@@ -22,16 +22,18 @@
         <activity android:name=".reviews.registerSeller" />
         <activity android:name=".reviews.registerOptions">
         </activity>
-        <activity android:name=".reviews.register" />
-        <activity android:name=".other.SignUp"></activity>
-        <activity android:name=".other.Login"></activity>
-        <activity android:name=".other.cart"></activity>
-        <activity android:name=".other.Home">
+        <activity android:name=".reviews.register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".other.SignUp"></activity>
+        <activity android:name=".other.Login"></activity>
+        <activity android:name=".other.cart"></activity>
+        <activity android:name=".other.Home">
+
         </activity> 
           <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
@@ -50,6 +52,10 @@
         <activity android:name=".accessories.uploadAccessory" />
         <activity android:name=".accessories.Accesories" />
         <activity android:name=".accessories.singleItemView" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
 
     </application>
