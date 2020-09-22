@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F1E7DD"
     tools:context=".reviews.editReview">
 
     <androidx.cardview.widget.CardView
@@ -20,15 +20,17 @@
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="314dp"
         android:layout_height="128dp"
+        android:background="@color/colorBG"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/feedback"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -51,12 +53,13 @@
         style="@style/editReviewRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.429" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -90,7 +93,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/itemName"
-        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.099"
@@ -100,11 +105,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#BF995DFF"
+        android:layout_width="121dp"
+        android:layout_height="49dp"
+        android:background="#2196F3"
         android:text="@string/confirmButton"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
@@ -117,6 +124,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tellUsMore"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
@@ -127,8 +136,8 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="413dp"
-        android:layout_height="50dp"
-        android:background="#9933FF"
+        android:layout_height="54dp"
+        android:background="#CA8080"
         android:text="@string/editReview"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -139,7 +148,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.006" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
@@ -152,11 +161,13 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="115dp"
-        android:layout_height="47dp"
-        android:background="#AEEA4C4C"
+        android:layout_width="146dp"
+        android:layout_height="49dp"
+        android:background="@color/deleteBtn"
         android:text="Delete Review"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="@color/deleteBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"

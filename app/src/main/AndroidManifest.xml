@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         
         <!-- Nimran -->
         <activity android:name=".userProfile"> </activity>
@@ -20,6 +19,10 @@
         <activity android:name=".dogs.addDog"></activity>
         <activity android:name=".dogs.manageMyDog"></activity>
         <!-- Other -->
+        <activity android:name=".reviews.registerSeller" />
+        <activity android:name=".reviews.registerOptions">
+        </activity>
+        <activity android:name=".reviews.register" />
         <activity android:name=".SignUp"></activity>
         <activity android:name=".Login">
         <activity android:name=".other.cart"></activity>
