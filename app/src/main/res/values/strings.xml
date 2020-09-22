@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">WOOF!</string>
-  
+
     <!--Nethmini-->
     <string name="Descrip01share">Share your story</string>
     <string name="Title_Share">Summarize your story in few words</string>
@@ -58,7 +58,20 @@
     <string name="reviewItem">   Review Item</string>
     <string name="reviewButton">   Review</string>
     <string name="itemList">   Items List</string>
-  
+    <string name="register">Register</string>
+    <string name="regCBtn">Customer</string>
+    <string name="regSBtn">Seller</string>
+    <string name="regCName">Name</string>
+    <string name="regCUsername">Username</string>
+    <string name="regCEmail">Email</string>
+    <string name="regCPhone">Phone</string>
+    <string name="regCPwd">Password</string>
+    <string name="regCConPwd">Confirm Password</string>
+    <string name="regBtn">Register</string>
+    <string name="regOchoice">Register As</string>
+
+
+
     <!--Nafeel-->
     <string name="search_icon">Search</string>
     <string name="sidebar_icon">Sidebar</string>
