@@ -81,5 +81,7 @@
     <string name="product_images">Images</string>
     <string name="Edit_button">Edit</string>
     <string name="View_reviews">View Reviews</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
 
 </resources>

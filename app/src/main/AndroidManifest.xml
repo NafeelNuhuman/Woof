@@ -10,37 +10,44 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Nethmini -->
-        <activity android:name=".stories.mystories" />
-        <activity android:name=".stories.stories" />
-        <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> <!-- Nimran -->
-        <activity android:name=".userProfile">
-
-        </activity>
+        
+        <!-- Nimran -->
+        <activity android:name=".userProfile"> </activity>
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets">
-
         </activity>
         <activity android:name=".dogs.uploadPet" />
         <activity android:name=".dogs.addDog"></activity>
         <activity android:name=".dogs.manageMyDog"></activity>
+        <!-- Other -->
         <activity android:name=".SignUp"></activity>
         <activity android:name=".Login">
+        <activity android:name=".other.cart"></activity>
+        <activity android:name=".other.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Atchu -->
+        </activity> 
+          <!-- Nethmini -->
+        <activity android:name=".stories.mystories" />
+        <activity android:name=".stories.stories" />
+        <activity android:name=".stories.singleStoryView" />
+        <activity android:name=".stories.stories2" /> 
+        
+          <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
-        <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
-        <activity android:name=".accessories.updateAccessory" />
-        <activity android:name=".accessories.manageAccessories" />
-        <activity android:name=".accessories.uploadAccessory" />
-        <activity android:name=".accessories.Accesories" />
-        <activity android:name=".accessories.singleItemView" />
+        <activity android:name=".reviews.editReview" /> 
+          <!-- Nafeel -->
+        <activity android:name=".Accessories.updateAccessory" />
+        <activity android:name=".Accessories.manageAccessories"></activity>
+        <activity android:name=".Accessories.uploadAccessory" />
+        <activity android:name=".Accessories.Accesories" />
+        <activity android:name=".Accessories.singleItemView" />
+
+
     </application>
 
 </manifest>

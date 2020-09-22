@@ -1,4 +1,4 @@
-package com.example.woof.accessories;
+package com.example.woof.Accessories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
