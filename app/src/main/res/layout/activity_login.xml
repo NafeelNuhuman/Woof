@@ -89,10 +89,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:layout_marginBottom="32dp"
+        android:onClick="movetoSignup"
         android:text="Dont have an Account?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView6"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
