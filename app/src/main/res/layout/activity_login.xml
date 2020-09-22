@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/etPwd"
         android:layout_width="300dp"
         android:layout_height="45dp"
 
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword">
+        app:layout_constraintTop_toBottomOf="@+id/etPwd">
 
         <RelativeLayout
             android:layout_width="match_parent"

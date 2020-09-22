@@ -94,5 +94,6 @@
     <string name="View_reviews">View Reviews</string>
     <string name="home">Home</string>
     <string name="cart">Cart</string>
+    <string name="signUp">Sign Up</string>
 
 </resources>
