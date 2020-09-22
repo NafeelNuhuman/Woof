@@ -9,33 +9,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".reviews.registerSeller" />
-        <activity android:name=".reviews.registerOptions"><intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+        
+        <!-- Nimran -->
+        <activity android:name=".userProfile"> </activity>
+        <activity android:name=".dogs.selectedDogview" />
+        <activity android:name=".dogs.viewAllpets">
         </activity>
-        <activity android:name=".reviews.register" /> <!-- Nethmini -->
+        <activity android:name=".dogs.uploadPet" />
+        <activity android:name=".dogs.addDog"></activity>
+        <activity android:name=".dogs.manageMyDog"></activity>
+        <!-- Other -->
+        <activity android:name=".reviews.registerSeller" />
+        <activity android:name=".reviews.registerOptions">
+        </activity>
+        <activity android:name=".reviews.register" />
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".Login">
+        <activity android:name=".other.cart"></activity>
+        <activity android:name=".other.Home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> 
+          <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> <!-- Nimran -->
-        <activity android:name=".dogs.selectedDogview" />
-        <activity android:name=".dogs.viewAllpets" />
-        <activity android:name=".dogs.viewMypet" />
-        <activity android:name=".dogs.uploadPet" />
-        <activity android:name=".dogs.addDog" /> <!-- Atchu -->
+        <activity android:name=".stories.stories2" /> 
+        
+          <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
-        <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
-        <activity android:name=".accessories.updateAccessory" />
-        <activity android:name=".accessories.manageAccessories">
+        <activity android:name=".reviews.editReview" /> 
+          <!-- Nafeel -->
+        <activity android:name=".Accessories.updateAccessory" />
+        <activity android:name=".Accessories.manageAccessories"></activity>
+        <activity android:name=".Accessories.uploadAccessory" />
+        <activity android:name=".Accessories.Accesories" />
+        <activity android:name=".Accessories.singleItemView" />
 
-        </activity>
-        <activity android:name=".accessories.uploadAccessory" />
-        <activity android:name=".accessories.Accesories" />
-        <activity android:name=".accessories.singleItemView" />
+
     </application>
 
 </manifest>

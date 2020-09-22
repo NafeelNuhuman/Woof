@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".accessories.manageAccessories">
+    tools:context=".Accessories.manageAccessories">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
@@ -33,23 +34,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@color/colorBG"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="360dp"
@@ -60,257 +60,68 @@
                 android:layout_marginBottom="10dp"
                 app:cardBackgroundColor="@color/material_on_primary_emphasis_high_type">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Item Name"
-                    android:textColor="@color/design_default_color_on_secondary"
-                    android:textSize="24dp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <ImageView
-                    android:layout_width="91dp"
-                    android:layout_height="83dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_report_image" />
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/itemName"
+                        android:textColor="@color/design_default_color_on_secondary"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
-                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="Delete"
+                        android:textColor="@color/design_default_color_background"
+                        app:backgroundTint="@color/deleteBtn"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Update"
-                    android:textColor="@color/design_default_color_background"
-                    android:textSize="14sp"
-                    app:backgroundTint="@color/colorAccent" />
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="101dp"
+                        android:layout_height="88dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@android:drawable/ic_menu_report_image" />
 
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Delete"
-                    android:textColor="@color/design_default_color_background"
-                    app:backgroundTint="@color/deleteBtn" />
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Update"
+                        android:textColor="@color/design_default_color_background"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
-            </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="220dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Item Name"
-                    android:textSize="24dp" />
-
-                <ImageView
-                    android:layout_width="91dp"
-                    android:layout_height="83dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_report_image" />
-
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
-                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Update"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Delete"
-                    android:textColor="#F13434" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Item Name"
-                    android:textSize="24dp" />
-
-                <ImageView
-                    android:layout_width="91dp"
-                    android:layout_height="83dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_report_image" />
-
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
-                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Update"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Delete"
-                    android:textColor="#F13434" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Item Name"
-                    android:textSize="24dp" />
-
-                <ImageView
-                    android:layout_width="91dp"
-                    android:layout_height="83dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_report_image" />
-
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
-                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Update"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Delete"
-                    android:textColor="#F13434" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Item Name"
-                    android:textSize="24dp" />
-
-                <ImageView
-                    android:layout_width="91dp"
-                    android:layout_height="83dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@android:drawable/ic_menu_report_image" />
-
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
-                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Update"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:layout_width="119dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="110dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Delete"
-                    android:textColor="#F13434" />
-
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 

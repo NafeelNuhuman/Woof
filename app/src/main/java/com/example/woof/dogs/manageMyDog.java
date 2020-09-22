@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import com.example.woof.R;
 
-public class viewMypet extends AppCompatActivity {
+public class manageMyDog extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_mypet);
+        setContentView(R.layout.activity_manage_my_dog);
     }
+
+
 }
