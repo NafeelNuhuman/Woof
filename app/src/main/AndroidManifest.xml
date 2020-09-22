@@ -11,11 +11,18 @@
         android:theme="@style/AppTheme">
 
         <!--Nethmini-->
-        <activity android:name=".stories.mystories"></activity>
+        <activity android:name=".stories.mystories">
+
+        </activity>
         <activity android:name=".stories.stories"></activity>
         <activity android:name=".stories.singleStoryView">
         </activity>
-        <activity android:name=".stories.stories2"></activity>
+        <activity android:name=".stories.stories2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!--Nimran-->
         <activity android:name=".dogs.selectedDogview">
@@ -37,10 +44,7 @@
         <!--Nafeel-->
         <activity android:name=".accessories.updateAccessory" />
         <activity android:name=".accessories.manageAccessories" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".accessories.uploadAccessory">
         </activity>
