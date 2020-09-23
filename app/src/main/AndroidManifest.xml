@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        
+
         <!-- Nimran -->
         <activity android:name=".other.userProfile"> </activity>
         <activity android:name=".dogs.selectedDogview" />
@@ -32,13 +32,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> 
+        </activity>
           <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> 
-        
+        <activity android:name=".stories.stories2" />
+
           <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
