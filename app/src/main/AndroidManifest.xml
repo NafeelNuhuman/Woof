@@ -19,10 +19,10 @@
         <activity android:name=".dogs.addDog"></activity>
         <activity android:name=".dogs.manageMyDog"></activity>
         <!-- Other -->
-        <activity android:name=".reviews.registerSeller" />
-        <activity android:name=".reviews.registerOptions">
+        <activity android:name=".other.registerSeller" />
+        <activity android:name=".other.registerOptions">
         </activity>
-        <activity android:name=".reviews.register" >
+        <activity android:name=".other.register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

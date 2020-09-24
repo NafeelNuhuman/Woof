@@ -1,4 +1,4 @@
-package com.example.woof.reviews;
+package com.example.woof.other;
 
 import androidx.appcompat.app.AppCompatActivity;
 
