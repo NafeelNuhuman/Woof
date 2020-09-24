@@ -28,7 +28,7 @@
         android:background="@drawable/signup_button"
         android:text="PET OWNER"
         app:backgroundTint="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/btnPetOwner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,20 +36,20 @@
         app:layout_constraintVertical_bias="0.48" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnPetOwner"
         android:layout_width="291dp"
         android:layout_height="62dp"
         android:background="@drawable/signup_button"
         android:text="SELLER"
         app:backgroundTint="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeller"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.78" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnSeller"
         android:layout_width="291dp"
         android:layout_height="62dp"
         android:background="@drawable/signup_button"
@@ -71,6 +71,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/btnSeller"
         app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
