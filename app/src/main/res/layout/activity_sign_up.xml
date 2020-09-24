@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/woof_" />
 
     <Button
-        android:id="@+id/btnReg"
+        android:id="@+id/btnLogin"
         android:layout_width="291dp"
         android:layout_height="62dp"
         android:layout_marginStart="60dp"

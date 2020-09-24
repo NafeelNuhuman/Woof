@@ -30,7 +30,7 @@ public class register extends AppCompatActivity {
         dateOfBirth = findViewById(R.id.etDob);
         pwd = findViewById(R.id.etPwd);
         conPwd = findViewById(R.id.etConPwd);
-        regBtn = findViewById(R.id.btnReg);
+        regBtn = findViewById(R.id.btnLogin);
 
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override

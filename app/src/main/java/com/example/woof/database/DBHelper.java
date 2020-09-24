@@ -2,10 +2,14 @@ package com.example.woof.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Woof.db";
@@ -36,6 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    //Register pet owner
     public boolean addPetOwner(petOwnerModel petOwnerModel){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -51,5 +56,43 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return insert != -1;
     }
+
+    //getting emails or passwords for sign in
+    public List readEmailorPwd(String req){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {
+                petOwnerMaster.petOwner.COLUMN_EMAIL,
+                petOwnerMaster.petOwner.COLUMN_PWD
+        };
+
+        Cursor cursor = db.query(
+                petOwnerMaster.petOwner.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        List emails = new ArrayList();
+        List passwords = new ArrayList();
+
+        while (cursor.moveToNext()){
+            String email = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_EMAIL));
+            String pwd = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_PWD));
+            emails.add(email);
+            passwords.add(pwd);
+        }
+        cursor.close();
+        if (req == "email")
+            return emails;
+        else if (req == "password")
+            return passwords;
+        else
+            return null;
+    }
+
 
 }
