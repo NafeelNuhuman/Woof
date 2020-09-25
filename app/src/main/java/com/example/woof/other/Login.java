@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,31 +27,33 @@ public class Login extends AppCompatActivity {
 
         etEmail = findViewById(R.id.etEmail);
         etPwd = findViewById(R.id.etPwd);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnReg);
         db = new DBHelper(this);
 
         //sign in
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List emails = db.readEmailorPwd("email");
-                List passwords = db.readEmailorPwd("password");
 
                 String email = etEmail.getText().toString();
                 String password = etPwd.getText().toString();
 
-                if (emails.indexOf(email) >= 0) {
-                    if (passwords.get(emails.indexOf(email)).equals(password)) {
-                        Toast.makeText(Login.this, "Welcome", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Login.this, Home.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(Login.this, "Email not registered", Toast.LENGTH_SHORT).show();
-                    recreate();
+                boolean check1 = db.checkEmailPwd(email,password,"pet owner");
+                boolean check2 = db.checkEmailPwd(email,password,"seller");
+                if (check1){
+                    Toast.makeText(Login.this, "Welcome", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),Home.class);
+                    intent.putExtra("email",email);
+                    startActivity(intent);
+                }else if (check2){
+                    Toast.makeText(Login.this, "Welcome", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),sellerProfile.class);
+                    intent.putExtra("email",email);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(Login.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });
@@ -60,7 +61,7 @@ public class Login extends AppCompatActivity {
 
 
     public void movetoSignup(View view) {
-        Intent intent = new Intent(this, SignUp.class);
+        Intent intent = new Intent(this, registerOptions.class);
         startActivity(intent);
     }
 }
