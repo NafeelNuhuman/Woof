@@ -5,14 +5,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 
 import androidx.annotation.Nullable;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Woof.db";
+    private ByteArrayOutputStream prodByteArrayOutputStream;
+    private byte[] prodImageInByte;
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -53,6 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
                         productMaster.product.COLUMN_NAME + " TEXT, " +
                         productMaster.product.COLUMN_DESC + " TEXT, " +
                         productMaster.product.COLUMN_PRICE + " REAL, " +
+                        productMaster.product.COLUMN_IMAGE + " BLOB, " +
                         productMaster.product.COLUMN_SELLER + " INTEGER)";
 
         db.execSQL(CREATE_PRODUCT_TABLE);
@@ -164,17 +169,34 @@ public class DBHelper extends SQLiteOpenHelper {
     //insert product
     public boolean addProduct(productModel pm){
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        Bitmap imageBitmap = pm.getImage();
+        prodByteArrayOutputStream = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
+        prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
+        ContentValues cv = new ContentValues();
         cv.put(productMaster.product.COLUMN_NAME,pm.getName());
         cv.put(productMaster.product.COLUMN_DESC,pm.getDesc());
         cv.put(productMaster.product.COLUMN_PRICE,pm.getPrice());
+        cv.put(productMaster.product.COLUMN_IMAGE,prodImageInByte);
         cv.put(productMaster.product.COLUMN_SELLER,pm.getSellerID());
 
         long insert = db.insert(productMaster.product.TABLE_NAME,null,cv);
         return insert != -2;
     }
 
+    //get all products
+    public Cursor getProducts(){
+        String query = "SELECT * FROM " + productMaster.product.TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+
+        if (db != null){
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
+    }
     /*//getting emails and passwords for pet owner sign in
     public List readEmailorPwd(String req) {
         SQLiteDatabase db = getReadableDatabase();

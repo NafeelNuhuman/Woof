@@ -12,6 +12,7 @@ public class productMaster {
         public static final String COLUMN_NAME = "ProductName";
         public static final String COLUMN_DESC = "ProductDescription";
         public static final String COLUMN_PRICE = "ProductPrice";
+        public static final String COLUMN_IMAGE = "Image";
         public  static final String COLUMN_SELLER = "SellerID";
     }
 }
