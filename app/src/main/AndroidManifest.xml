@@ -18,14 +18,14 @@
         <activity android:name=".dogs.addDog" />
         <activity android:name=".dogs.manageMyDog" /> <!-- Other -->
         <activity android:name=".other.registerSeller" />
-        <activity android:name=".other.registerOptions"></activity>
-        <activity android:name=".other.register" />
-        <activity android:name=".other.Login">
+        <activity android:name=".other.registerOptions">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".other.register" />
+        <activity android:name=".other.Login">
         </activity>
         <activity android:name=".other.cart" />
         <activity android:name=".other.Home"></activity> <!-- Nethmini -->
@@ -38,7 +38,9 @@
         <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
         <activity android:name=".accessories.updateAccessory" />
         <activity android:name=".accessories.manageAccessories" />
-        <activity android:name=".accessories.uploadAccessory" />
+        <activity android:name=".accessories.uploadAccessory" >
+
+        </activity>
         <activity android:name=".accessories.Accesories" />
         <activity android:name=".accessories.singleItemView" />
 
