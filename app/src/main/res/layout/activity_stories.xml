@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.436" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnProdConfirm"
         android:layout_width="237dp"
         android:layout_height="54dp"
         android:background="@drawable/button_border"

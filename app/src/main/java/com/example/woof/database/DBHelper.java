@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -141,6 +143,8 @@ public class DBHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery("SELECT * FROM " + sellerMaster.seller.TABLE_NAME +
                     " WHERE " + sellerMaster.seller.COLUMN_EMAIL + "=? AND " + sellerMaster.seller.COLUMN_PWD + "=?", new String[]{email, pwd});
         }
+
+        assert cursor != null;
         if (cursor.getCount() > 0)
             return true;
         else
@@ -153,8 +157,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT " + sellerMaster.seller.COLUMN_NAME +
                 " FROM " + sellerMaster.seller.TABLE_NAME + " WHERE " + sellerMaster.seller.COLUMN_EMAIL + "=?", new String[]{email});
         cursor.moveToFirst();
-        String name = cursor.getString(0);
-        return name;
+        return cursor.getString(0);
     }
 
     //get seller ID
@@ -197,6 +200,32 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    //get list of products
+    public ArrayList<productModel> getProductList(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<productModel> productModelList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(" SELECT * FROM " + productMaster.product.TABLE_NAME, null);
+        if(cursor.getCount() != 0){
+            while (cursor.moveToNext()){
+                int ID = cursor.getInt(0);
+                String name = cursor.getString(1);
+                String desc = cursor.getString(2);
+                float price = cursor.getFloat(3);
+                byte[] image = cursor.getBlob(4);
+                int sellerID = cursor.getInt(5);
+
+                Bitmap imageBitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+                productModelList.add(new productModel(ID,name,desc,price,imageBitmap,sellerID));
+            }
+            return productModelList;
+        }
+        else{
+            return  null;
+        }
+    }
+
     /*//getting emails and passwords for pet owner sign in
     public List readEmailorPwd(String req) {
         SQLiteDatabase db = getReadableDatabase();
