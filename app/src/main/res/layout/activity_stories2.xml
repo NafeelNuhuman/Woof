@@ -187,7 +187,7 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnShareStory"
             android:layout_width="310dp"
             android:layout_height="51dp"
             android:layout_marginTop="16dp"
