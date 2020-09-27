@@ -27,17 +27,19 @@
         <activity android:name=".other.Login"></activity>
         <activity android:name=".other.cart"></activity>
         <activity android:name=".other.Home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity> 
           <!-- Nethmini -->
         <activity android:name=".stories.mystories" />
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> 
+        <activity android:name=".stories.stories2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         
           <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
