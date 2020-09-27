@@ -62,6 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_PRODUCT_TABLE);
 
+
         //review Table
         String CREATE_REVIEW_TABLE =
                 "CREATE TABLE " + reviewsMaster.myReviews.TABLE_NAME + "(" +
@@ -71,6 +72,17 @@ public class DBHelper extends SQLiteOpenHelper {
                         reviewsMaster.myReviews.COLUMN_ACCESSORY_ID + " INTEGER, " +
                         reviewsMaster.myReviews.COLUMN_USER_ID + "INTEGER)";
         db.execSQL(CREATE_REVIEW_TABLE);
+
+
+        //Stories table
+        String CREATE_STORIES_TABLE=
+                "CREATE TABLE "+StoriesMaster.stories.TABLE_NAME+"("+
+                        StoriesMaster.stories.COLUMN_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        StoriesMaster.stories.COLUMN_NAME+" TEXT,"+
+                        StoriesMaster.stories.COLUMN_DESC+" TEXT,"+
+                        StoriesMaster.stories.COLUMN_USERID+" INTEGER)";
+
+        db.execSQL(CREATE_STORIES_TABLE);
 
 
     }
@@ -117,6 +129,19 @@ public class DBHelper extends SQLiteOpenHelper {
         return insert != -1;
     }
 
+    //Stories
+    public boolean addStories(storyModel stm){
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues cv  =new ContentValues();
+
+        cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getTitle());
+        cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getDescrip());
+        cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getUserId());
+
+        long insert=db.insert(StoriesMaster.stories.TABLE_NAME,null,cv);
+        return insert != -1;
+
+    }
 
     //checking if email exists in seller table
     public boolean checkmail(String email) {
@@ -167,11 +192,21 @@ public class DBHelper extends SQLiteOpenHelper {
         return name;
     }
 
+
     //get seller ID
     public int getSellerID(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT " + sellerMaster.seller.COLUMN_ID +
                 " FROM " + sellerMaster.seller.TABLE_NAME + " WHERE " + sellerMaster.seller.COLUMN_EMAIL + "=?", new String[]{email});
+        cursor.moveToFirst();
+        return cursor.getInt(0);
+    }
+
+    //get user ID
+    public int getUserID(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_ID +
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + "=?", new String[]{email});
         cursor.moveToFirst();
         return cursor.getInt(0);
     }

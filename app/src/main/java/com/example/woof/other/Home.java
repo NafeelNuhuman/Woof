@@ -18,6 +18,7 @@ import com.example.woof.stories.stories2;
 public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    static String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,10 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+
+        Intent intent1 = getIntent();
+        email = intent1.getStringExtra("email");
+
     }
 
     public void ClickMenu(View view) {
@@ -38,9 +43,8 @@ public class Home extends AppCompatActivity {
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+        intent.putExtra("email",email);
         activity.startActivity(intent);
 
     }
