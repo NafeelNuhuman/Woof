@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.woof.R;
 import com.example.woof.accessories.Accesories;
@@ -18,16 +19,24 @@ import com.example.woof.other.Home;
 public class stories2 extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    Button shareStory;
+    static  String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stories2);
-
+        shareStory = findViewById(R.id.btnShareStory);
         drawerLayout = findViewById(R.id.drawer_layout);
+
+        Intent intent1 = getIntent();
+        email = intent1.getStringExtra("email");
+
+
     }
     public void movePage(View view){
         Intent intent = new Intent(this, stories.class);
+        intent.putExtra("email",email);
         startActivity(intent);
     }
 
@@ -41,9 +50,7 @@ public class stories2 extends AppCompatActivity {
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         activity.startActivity(intent);
 
     }
