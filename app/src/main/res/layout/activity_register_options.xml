@@ -6,55 +6,68 @@
     android:layout_height="match_parent"
     android:background="@color/colorBG"
     android:textAlignment="center"
-    tools:context=".reviews.registerOptions">
+    tools:context=".other.registerOptions">
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnPetOwner"
         android:layout_width="358dp"
         android:layout_height="78dp"
-        android:onClick="re"
-        android:text="@string/regCBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.338" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="358dp"
-        android:layout_height="78dp"
-        android:text="@string/regSBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
+        android:text="Pet Owner"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <Button
+        android:id="@+id/btnSeller"
+        android:layout_width="358dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/regSBtn"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPetOwner" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="108dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView37"
         android:layout_width="355dp"
         android:layout_height="50dp"
+        android:layout_marginTop="70dp"
         android:text="@string/regOchoice"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="290dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <TextView
+        android:id="@+id/tvAlreadyRegistered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="174dp"
+        android:text="Already have an account?"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSeller" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
