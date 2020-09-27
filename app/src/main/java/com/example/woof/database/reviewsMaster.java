@@ -11,7 +11,7 @@ public class reviewsMaster {
         public static final String COLUMN_ID = "reviewID";
         public static final String COLUMN_DESC = "reviewDescription";
         public static final String COLUMN_RATING = "reviewRating";
-        public static final String COLUMN_ACCESSORY_ID = "accessoryId";
-        public static final String COLUMN_USER_ID = "userId";
+        public static final String COLUMN_ACCESSORY_ID = "accessoryID";
+        public static final String COLUMN_USER_ID = "userID";
     }
 }

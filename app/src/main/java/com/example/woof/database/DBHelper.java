@@ -62,6 +62,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_PRODUCT_TABLE);
 
+
+        //review Table
+        String CREATE_REVIEW_TABLE =
+                "CREATE TABLE " + reviewsMaster.myReviews.TABLE_NAME + "(" +
+                        reviewsMaster.myReviews.COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        reviewsMaster.myReviews.COLUMN_DESC + " TEXT, " +
+                        reviewsMaster.myReviews.COLUMN_RATING + " INTEGER, " +
+                        reviewsMaster.myReviews.COLUMN_ACCESSORY_ID + " INTEGER, " +
+                        reviewsMaster.myReviews.COLUMN_USER_ID + "INTEGER)";
+        db.execSQL(CREATE_REVIEW_TABLE);
+
+
         //Stories table
         String CREATE_STORIES_TABLE=
                 "CREATE TABLE "+StoriesMaster.stories.TABLE_NAME+"("+
@@ -71,6 +83,7 @@ public class DBHelper extends SQLiteOpenHelper {
                         StoriesMaster.stories.COLUMN_USERID+" INTEGER)";
 
         db.execSQL(CREATE_STORIES_TABLE);
+
 
     }
 
