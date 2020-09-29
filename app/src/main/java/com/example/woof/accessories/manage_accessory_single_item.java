@@ -1,10 +1,12 @@
-package com.example.woof;
+package com.example.woof.accessories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.woof.R;
 
 public class manage_accessory_single_item extends AppCompatActivity {
 
@@ -15,12 +17,10 @@ public class manage_accessory_single_item extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_accessory_single_item);
 
-        name = findViewById(R.id.etProductName);
-        desc = findViewById(R.id.etProductDesc);
-        price = findViewById(R.id.etProdPrice);
-        image = findViewById(R.id.prodImage);
-
-
+        this.name = findViewById(R.id.etProductName);
+        this.desc = findViewById(R.id.etProductDesc);
+        this.price = findViewById(R.id.etProdPrice);
+        this.image = findViewById(R.id.prodImage);
 
     }
 }

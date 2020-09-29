@@ -1,6 +1,5 @@
 package com.example.woof.adapters;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.woof.R;
 import com.example.woof.database.productModel;
-import com.example.woof.manage_accessory_single_item;
 
 import java.util.ArrayList;
 

@@ -226,41 +226,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*//getting emails and passwords for pet owner sign in
-    public List readEmailorPwd(String req) {
-        SQLiteDatabase db = getReadableDatabase();
 
-        String[] projection = {
-                petOwnerMaster.petOwner.COLUMN_EMAIL,
-                petOwnerMaster.petOwner.COLUMN_PWD
-        };
 
-        Cursor cursor = db.query(
-                petOwnerMaster.petOwner.TABLE_NAME,
-                projection,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
-
-        List emails = new ArrayList();
-        List passwords = new ArrayList();
-
-        while (cursor.moveToNext()) {
-            String email = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_EMAIL));
-            String pwd = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_PWD));
-            emails.add(email);
-            passwords.add(pwd);
-        }
-        cursor.close();
-        if (req == "email")
-            return emails;
-        else if (req == "password")
-            return passwords;
-        else
-            return null;
-    }*/
 
 }
