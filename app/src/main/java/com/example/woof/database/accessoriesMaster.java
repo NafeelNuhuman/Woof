@@ -13,7 +13,7 @@ public class accessoriesMaster {
         public static final String COLUMN_ID = "Accessories ID";
         public static final String COLUMN_NAME = "Name";
         public static final String COLUMN_DESC = "Description";
-        public static final String COLUMN_IMAGES = "Images";
+        public static final String COLUMN_ = "Images";
         public static final String COLUMN_PRICE = "Price";
         public static final String COLUMN_SELLER_ID = "Seller";
 

@@ -1,4 +1,4 @@
-package com.example.woof.other;
+package com.example.woof.reviews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +8,15 @@ import android.view.View;
 
 import com.example.woof.R;
 
-public class Login extends AppCompatActivity {
+public class registerOptions extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register_options);
     }
-    public void movetoSignup(View view){
-        Intent intent = new Intent (this,SignUp.class);
+    public void movePage(View view){
+        Intent intent = new Intent(  this,register.class);
         startActivity(intent);
-
     }
 }
