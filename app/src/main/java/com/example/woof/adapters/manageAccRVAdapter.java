@@ -46,8 +46,8 @@ public class manageAccRVAdapter extends RecyclerView.Adapter<manageAccRVAdapter.
 
     public  static  class RVViewHolderClass extends RecyclerView.ViewHolder
     {
-        TextView prodName,proDesc,prodPrice;
-        ImageView prodImage;
+        private TextView prodName,proDesc,prodPrice;
+        private ImageView prodImage;
 
         public RVViewHolderClass(@NonNull View itemView) {
             super(itemView);

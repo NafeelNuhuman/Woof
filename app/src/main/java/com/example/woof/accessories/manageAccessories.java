@@ -26,6 +26,7 @@ public class manageAccessories extends AppCompatActivity {
         rv = findViewById(R.id.manageAccRV);
         dbHelper = new DBHelper(this);
         this.getData();
+
     }
 
     public void getData(){

@@ -10,6 +10,7 @@
     android:layout_marginBottom="10dp"
     app:cardBackgroundColor="@color/cardview_light_background"
     app:cardCornerRadius="10dp"
+    android:elevation="5dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +24,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/itemName"
-            android:textColor="@color/design_default_color_on_secondary"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
