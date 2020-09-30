@@ -26,7 +26,6 @@ public class addDog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_dog);
         dbhelper = new DBHelper(this);
-        dbhelper.get
         name = findViewById(R.id.etPetName);
         size = findViewById(R.id.etPetSize);
         breed = findViewById(R.id.etPetBreed);
