@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,16 +20,23 @@ public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     static String email;
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        SharedPreferences
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
         Intent intent1 = getIntent();
         email = intent1.getStringExtra("email");
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("email", email);
+        editor.apply();
 
     }
 
@@ -64,6 +72,8 @@ public class Home extends AppCompatActivity {
     public void ClickStories(View view) {
         redirectActivity(this, stories2.class);
     }
+
+    public  void  ClickUser(View view){ redirectActivity(this,userProfile.class);}
 
 
 }

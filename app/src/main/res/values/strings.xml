@@ -95,5 +95,6 @@
     <string name="home">Home</string>
     <string name="cart">Cart</string>
     <string name="signUp">Sign Up</string>
+    <string name="profile">Profile</string>
 
 </resources>
