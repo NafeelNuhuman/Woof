@@ -19,6 +19,7 @@ import com.example.woof.stories.stories2;
 public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+
     static String email;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
 
@@ -51,6 +52,7 @@ public class Home extends AppCompatActivity {
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
+
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("email",email);
         activity.startActivity(intent);
@@ -70,10 +72,10 @@ public class Home extends AppCompatActivity {
     }
 
     public void ClickStories(View view) {
+
         redirectActivity(this, stories2.class);
     }
 
     public  void  ClickUser(View view){ redirectActivity(this,userProfile.class);}
-
 
 }
