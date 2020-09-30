@@ -66,7 +66,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //review Table
         String CREATE_REVIEW_TABLE =
                 "CREATE TABLE " + reviewsMaster.myReviews.TABLE_NAME + "(" +
-                        reviewsMaster.myReviews.COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        reviewsMaster.myReviews.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         reviewsMaster.myReviews.COLUMN_DESC + " TEXT, " +
                         reviewsMaster.myReviews.COLUMN_RATING + " INTEGER, " +
                         reviewsMaster.myReviews.COLUMN_ACCESSORY_ID + " INTEGER, " +

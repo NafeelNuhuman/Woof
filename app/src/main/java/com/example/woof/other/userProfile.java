@@ -17,7 +17,11 @@ public class userProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
     }
+
+
 
     public void moveToAddDogs(View view){
         Intent intent = new Intent(this, addDog.class);
