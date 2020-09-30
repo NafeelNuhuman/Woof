@@ -7,18 +7,33 @@
     tools:context=".accessories.uploadAccessory">
 
     <Button
-        android:id="@+id/btnProdConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_width="128dp"
+        android:layout_height="44dp"
         android:layout_marginStart="156dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="167dp"
         android:text="CONFIRM"
-        app:cornerRadius="10dp"
+        app:cornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prodImage1" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="167dp"
+        android:text="Add"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
@@ -32,20 +47,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="222dp"
         android:text="@string/title1"
         android:textColor="#FBFBFB"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar4"
-        app:layout_constraintHorizontal_bias="0.185"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar4"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView5"
@@ -55,9 +70,8 @@
         android:text="Product Name"
         android:textAlignment="textStart"
 
-        android:textColor="@color/colorPrimary"
+        android:textColor="#6200EE"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,11 +89,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etProdPrice"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="numberDecimal"
+            android:text="LKR XXXX"
             android:textSize="14dp">
 
         </com.google.android.material.textfield.TextInputEditText>
@@ -93,9 +106,8 @@
         android:text="Product Description"
 
         android:textAlignment="textStart"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#6200EE"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,10 +125,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etProductDesc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
+            android:text="description"
             android:textSize="14dp">
 
         </com.google.android.material.textfield.TextInputEditText>
@@ -130,9 +142,8 @@
         android:text="Price"
 
         android:textAlignment="textStart"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#6200EE"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,10 +160,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etProductName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
+            android:text="name"
             android:textSize="14dp">
 
         </com.google.android.material.textfield.TextInputEditText>
@@ -163,28 +174,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="308dp"
-        android:text="Add Image"
-        android:textColor="@color/colorPrimary"
+        android:text="Images"
+        android:textColor="#6200EE"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
-    <ImageView
-        android:id="@+id/prodImage1"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="24dp"
-        android:onClick="chooseImage"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@android:drawable/ic_menu_report_image">
+        app:layout_constraintTop_toBottomOf="@+id/button3">
 
-    </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image">
+
+            </ImageView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

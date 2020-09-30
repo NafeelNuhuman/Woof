@@ -1,4 +1,4 @@
-package com.example.woof.dogs;
+package com.example.woof.reviews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +8,15 @@ import android.view.View;
 
 import com.example.woof.R;
 
-public class uploadPet extends AppCompatActivity {
+public class registerOptions extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload_pet);
+        setContentView(R.layout.activity_register_options);
     }
-
-    public void movePagetomanage(View view){
-        Intent intent = new Intent(this, manageMyDog.class);
+    public void movePage(View view){
+        Intent intent = new Intent(  this,register.class);
         startActivity(intent);
     }
 }

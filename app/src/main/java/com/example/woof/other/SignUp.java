@@ -8,16 +8,16 @@ import android.view.View;
 
 import com.example.woof.R;
 
-public class Login extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
     }
-    public void movetoSignup(View view){
-        Intent intent = new Intent (this,SignUp.class);
-        startActivity(intent);
 
+    public void moveToLogin(View view){
+        Intent intent = new Intent (this,Login.class);
+        startActivity(intent);
     }
 }
