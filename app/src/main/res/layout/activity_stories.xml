@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBG"
     tools:context=".stories.stories">
 
 
@@ -11,35 +12,34 @@
         android:id="@+id/textView2"
         android:layout_width="135dp"
         android:layout_height="39dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Title_Sh"
-        android:textColor="#9C27B0"
+        android:textColor="#CA8080"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="179dp"
         android:layout_height="39dp"
+        android:layout_marginTop="28dp"
         android:text="@string/Description_Sh"
-        android:textColor="#9C27B0"
+        android:textColor="#CA8080"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintTop_toBottomOf="@+id/etStoryTitle" />
 
     <Button
         android:id="@+id/ShareBtn"
         android:layout_width="237dp"
-        android:layout_height="54dp"
-        android:background="@drawable/button_border"
+        android:layout_height="57dp"
+        android:background="@color/colorAccent"
+        android:maxLength="20"
         android:text="@string/Share_Button"
         android:textColor="#ffffff"
         android:textSize="30sp"
@@ -64,29 +64,30 @@
 
     <EditText
         android:id="@+id/StoryDescription"
-        android:layout_width="341dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="346dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_text_border"
         android:hint="@string/Descrip_Share"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/etStoryTitle"
-        android:layout_width="331dp"
-        android:layout_height="61dp"
+        android:layout_width="346dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_border"
         android:hint="@string/Title_Share"
         android:inputType="textPersonName"
+        android:maxLength="20"
         android:padding="10dp"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,17 +110,16 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="206dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
         android:text="@string/App_shareYourStory"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

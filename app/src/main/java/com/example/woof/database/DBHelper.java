@@ -66,7 +66,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //review Table
         String CREATE_REVIEW_TABLE =
                 "CREATE TABLE " + reviewsMaster.myReviews.TABLE_NAME + "(" +
-                        reviewsMaster.myReviews.COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        reviewsMaster.myReviews.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         reviewsMaster.myReviews.COLUMN_DESC + " TEXT, " +
                         reviewsMaster.myReviews.COLUMN_RATING + " INTEGER, " +
                         reviewsMaster.myReviews.COLUMN_ACCESSORY_ID + " INTEGER, " +
@@ -130,13 +130,13 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Stories
-    public boolean addStories(storyModel stm){
+    public boolean addStory(storyModel stm){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv  =new ContentValues();
 
         cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getTitle());
-        cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getDescrip());
-        cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getUserId());
+        cv.put(StoriesMaster.stories.COLUMN_DESC,stm.getDescrip());
+        cv.put(StoriesMaster.stories.COLUMN_USERID,stm.getUserId());
 
         long insert=db.insert(StoriesMaster.stories.TABLE_NAME,null,cv);
         return insert != -1;
