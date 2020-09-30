@@ -10,12 +10,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.woof.R;
+import com.example.woof.accessories.manageAccessories;
 import com.example.woof.accessories.uploadAccessory;
 import com.example.woof.database.DBHelper;
 
 public class sellerProfile extends AppCompatActivity {
 
-    TextView sellerName,uploadItem;
+    TextView sellerName,uploadItem,manageItems;
     private String email = "";
     private int sellerID;
     DBHelper dbHelper;
@@ -27,7 +28,7 @@ public class sellerProfile extends AppCompatActivity {
         setContentView(R.layout.activity_seller_profile);
         dbHelper = new DBHelper(getApplicationContext());
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         email  = intent.getStringExtra("email");
         sellerID = dbHelper.getSellerID(email);
 
@@ -40,6 +41,7 @@ public class sellerProfile extends AppCompatActivity {
         final DBHelper dbHelper = new DBHelper(getApplicationContext());
         sellerName = findViewById(R.id.tvSellerName);
         uploadItem = findViewById(R.id.tvUploadItem);
+        manageItems = findViewById(R.id.tvManageItems);
 
         String seller = dbHelper.getSellerName(email);
         sellerName.setText(seller);
@@ -51,6 +53,15 @@ public class sellerProfile extends AppCompatActivity {
                 Intent intent1 = new Intent(sellerProfile.this, uploadAccessory.class);
                 intent1.putExtra("email",email);
                 startActivity(intent1);
+            }
+        });
+
+        manageItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(sellerProfile.this, manageAccessories.class);
+                intent2.putExtra("email",email);
+                startActivity(intent2);
             }
         });
 

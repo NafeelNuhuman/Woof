@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -176,6 +178,8 @@ public class DBHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery("SELECT * FROM " + sellerMaster.seller.TABLE_NAME +
                     " WHERE " + sellerMaster.seller.COLUMN_EMAIL + "=? AND " + sellerMaster.seller.COLUMN_PWD + "=?", new String[]{email, pwd});
         }
+
+        assert cursor != null;
         if (cursor.getCount() > 0)
             return true;
         else
@@ -188,8 +192,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT " + sellerMaster.seller.COLUMN_NAME +
                 " FROM " + sellerMaster.seller.TABLE_NAME + " WHERE " + sellerMaster.seller.COLUMN_EMAIL + "=?", new String[]{email});
         cursor.moveToFirst();
-        String name = cursor.getString(0);
-        return name;
+        return cursor.getString(0);
     }
 
 
@@ -242,41 +245,33 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
-    /*//getting emails and passwords for pet owner sign in
-    public List readEmailorPwd(String req) {
-        SQLiteDatabase db = getReadableDatabase();
 
-        String[] projection = {
-                petOwnerMaster.petOwner.COLUMN_EMAIL,
-                petOwnerMaster.petOwner.COLUMN_PWD
-        };
+    //get list of products
+    public ArrayList<productModel> getProductList(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<productModel> productModelList = new ArrayList<>();
 
-        Cursor cursor = db.query(
-                petOwnerMaster.petOwner.TABLE_NAME,
-                projection,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
+        Cursor cursor = db.rawQuery(" SELECT * FROM " + productMaster.product.TABLE_NAME, null);
+        if(cursor.getCount() != 0){
+            while (cursor.moveToNext()){
+                int ID = cursor.getInt(0);
+                String name = cursor.getString(1);
+                String desc = cursor.getString(2);
+                float price = cursor.getFloat(3);
+                byte[] image = cursor.getBlob(4);
+                int sellerID = cursor.getInt(5);
 
-        List emails = new ArrayList();
-        List passwords = new ArrayList();
-
-        while (cursor.moveToNext()) {
-            String email = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_EMAIL));
-            String pwd = cursor.getString(cursor.getColumnIndexOrThrow(petOwnerMaster.petOwner.COLUMN_PWD));
-            emails.add(email);
-            passwords.add(pwd);
+                Bitmap imageBitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+                productModelList.add(new productModel(ID,name,desc,price,imageBitmap,sellerID));
+            }
+            return productModelList;
         }
-        cursor.close();
-        if (req == "email")
-            return emails;
-        else if (req == "password")
-            return passwords;
-        else
-            return null;
-    }*/
+        else{
+            return  null;
+        }
+    }
+
+
+
 
 }
