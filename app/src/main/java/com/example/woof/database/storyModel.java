@@ -4,10 +4,10 @@ public class storyModel {
     private int storyId;
     private String Title;
     private String Descrip;
-    private String userId;
+    private int userId;
 
 
-    public storyModel(int storyId, String title, String descrip, String userId) {
+    public storyModel(int storyId, String title, String descrip, int userId) {
         this.storyId = storyId;
         Title = title;
         Descrip = descrip;
@@ -22,11 +22,11 @@ public class storyModel {
         this.storyId = storyId;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
