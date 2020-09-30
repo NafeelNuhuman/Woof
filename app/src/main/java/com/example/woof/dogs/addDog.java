@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import com.example.woof.R;
 import com.example.woof.database.DBHelper;
-//class
+
 public class addDog extends AppCompatActivity {
 
     EditText name, size, breed, gender, age, vacc;
