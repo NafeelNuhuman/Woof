@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F1E7DD"
-    tools:context=".reviews.register">
+    tools:context=".other.register">
 
 
     <EditText
@@ -17,6 +17,7 @@
         android:ems="10"
         android:hint="Contact number"
         android:inputType="phone"
+        android:maxLength="10"
         android:paddingLeft="20dp"
         android:textColorHint="#ffffff"
         android:textSize="12dp"
@@ -52,11 +53,11 @@
         android:paddingLeft="20dp"
         android:textColorHint="#ffffff"
         android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUName" />
+        app:layout_constraintTop_toBottomOf="@+id/etLName" />
 
     <EditText
         android:id="@+id/etConPwd"
@@ -71,11 +72,12 @@
         android:textColorHint="#ffffff"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPwd" />
 
     <EditText
-        android:id="@+id/etDob"
+        android:id="@+id/etAddress"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
@@ -89,27 +91,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etConPwd" />
+        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
     <Button
         android:id="@+id/btnReg"
         android:layout_width="217dp"
         android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/buttonmod"
         android:text="@string/regBtn"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDob"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintTop_toBottomOf="@+id/etConPwd" />
 
     <EditText
         android:id="@+id/etFName"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="102dp"
         android:background="@drawable/reg_insert"
         android:cursorVisible="true"
@@ -122,7 +124,7 @@
         android:textCursorDrawable="@color/design_default_color_background"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -135,28 +137,14 @@
         android:ems="10"
         android:hint=" Last Name"
         android:inputType="textPersonName"
+        android:maxLength="10"
         android:paddingLeft="20dp"
         android:textColorHint="#ffffff"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFName" />
-
-    <EditText
-        android:id="@+id/etUName"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/reg_insert"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:paddingLeft="20dp"
-        android:textColorHint="#ffffff"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLName" />
 
     <EditText
         android:id="@+id/etPwd"
@@ -171,8 +159,9 @@
         android:textColorHint="#ffffff"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddress" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
