@@ -71,7 +71,6 @@ public class Home extends AppCompatActivity {
     }
 
     public void ClickStories(View view) {
-
         redirectActivity(this, stories2.class);
     }
 
