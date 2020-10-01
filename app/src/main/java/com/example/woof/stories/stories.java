@@ -31,7 +31,7 @@ public class stories extends AppCompatActivity {
         setContentView(R.layout.activity_stories);
         Title = findViewById(R.id.etStoryTitle);
         Description = findViewById(R.id.StoryDescription);
-        ShareButton = findViewById(R.id.ShareBtn);
+        ShareButton = findViewById(R.id.UserStoriesbtn);
         dbHelper = new DBHelper(getApplicationContext());
 
 
@@ -55,7 +55,7 @@ public class stories extends AppCompatActivity {
 
                         dbHelper.addStory(stm);
                         Toast.makeText(stories.this, "Shared successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), mystories.class);
+                        Intent intent = new Intent(getApplicationContext(), stories.class);
                         startActivity(intent);
 
                     } catch (Exception e) {
