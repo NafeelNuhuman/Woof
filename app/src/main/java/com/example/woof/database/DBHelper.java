@@ -216,34 +216,22 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //insert product
     public boolean addProduct(productModel pm){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Bitmap imageBitmap = pm.getImage();
-        prodByteArrayOutputStream = new ByteArrayOutputStream();
-        imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
-        prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
-        ContentValues cv = new ContentValues();
-        cv.put(productMaster.product.COLUMN_NAME,pm.getName());
-        cv.put(productMaster.product.COLUMN_DESC,pm.getDesc());
-        cv.put(productMaster.product.COLUMN_PRICE,pm.getPrice());
-        cv.put(productMaster.product.COLUMN_IMAGE,prodImageInByte);
-        cv.put(productMaster.product.COLUMN_SELLER,pm.getSellerID());
+            SQLiteDatabase db = this.getWritableDatabase();
+            Bitmap imageBitmap = pm.getImage();
+            prodByteArrayOutputStream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
+            prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
-        long insert = db.insert(productMaster.product.TABLE_NAME,null,cv);
-        return insert != -2;
-    }
+            ContentValues cv = new ContentValues();
+            cv.put(productMaster.product.COLUMN_NAME,pm.getName());
+            cv.put(productMaster.product.COLUMN_DESC,pm.getDesc());
+            cv.put(productMaster.product.COLUMN_PRICE,pm.getPrice());
+            cv.put(productMaster.product.COLUMN_IMAGE,prodImageInByte);
+            cv.put(productMaster.product.COLUMN_SELLER,pm.getSellerID());
 
-    //get all products
-    public Cursor getProducts(){
-        String query = "SELECT * FROM " + productMaster.product.TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = null;
-
-        if (db != null){
-            cursor = db.rawQuery(query,null);
-        }
-        return cursor;
+            long insert = db.insert(productMaster.product.TABLE_NAME,null,cv);
+            return insert != -1;
     }
 
     //get list of products

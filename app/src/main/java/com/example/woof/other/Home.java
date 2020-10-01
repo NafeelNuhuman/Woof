@@ -28,7 +28,6 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        SharedPreferences
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -72,7 +71,6 @@ public class Home extends AppCompatActivity {
     }
 
     public void ClickStories(View view) {
-
         redirectActivity(this, stories2.class);
     }
 

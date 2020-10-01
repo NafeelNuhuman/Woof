@@ -7,7 +7,7 @@
     tools:context=".accessories.singleItemView">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/singleItemProdImage"
         android:layout_width="411dp"
         android:layout_height="330dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,20 +27,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/singleItemProdImage" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/singleItemProdPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/product_price"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toStartOf="@+id/addToCart"
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/singleItemProdDesc" />
 
     <TextView
         android:id="@+id/textView8"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/singleItemprodName" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/singleItemProdDesc"
         android:layout_width="376dp"
         android:layout_height="183dp"
         android:layout_marginTop="12dp"
@@ -88,7 +88,7 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/addToCart"
         android:layout_width="57dp"
         android:layout_height="55dp"
         android:layout_marginEnd="28dp"
