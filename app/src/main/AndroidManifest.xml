@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".stories.manage_story_single_item"></activity>
+        <activity android:name=".stories.manageStories" />
         <activity android:name=".accessories.singleAccessoryCard" />
         <activity android:name=".accessories.manage_accessory_single_item" />
         <activity android:name=".other.sellerProfile" /> <!-- Nimran -->
@@ -16,8 +18,7 @@
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets" />
         <activity android:name=".dogs.addDog" />
-        <activity android:name=".dogs.manageMyDog" />
-        <!-- Other -->
+        <activity android:name=".dogs.manageMyDog" /> <!-- Other -->
         <activity android:name=".other.registerSeller" />
         <activity android:name=".other.registerOptions">
             <intent-filter>
@@ -34,7 +35,6 @@
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
         <activity android:name=".stories.stories2" /> <!-- Atchu -->
-
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
         <activity android:name=".reviews.editReview" /> <!-- Nafeel -->

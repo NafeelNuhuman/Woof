@@ -3,23 +3,37 @@ package com.example.woof.stories;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.woof.R;
 import com.example.woof.accessories.Accesories;
+import com.example.woof.adapters.manageStoriesRVAdapter;
+import com.example.woof.database.DBHelper;
+import com.example.woof.dogs.uploadPet;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.other.Home;
+
+import java.util.ArrayList;
 
 public class stories2 extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Button shareStory;
     static  String email;
+    private RecyclerView rvs;
+    private DBHelper dbHelper;
+    ArrayList<Integer> StoryID;
+    ArrayList<String> StoryTitle,StoryDesc;
+    com.example.woof.adapters.manageStoriesRVAdapter manageStoriesRVAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +42,40 @@ public class stories2 extends AppCompatActivity {
         shareStory = findViewById(R.id.btnShareStory);
         drawerLayout = findViewById(R.id.drawer_layout);
 
+        rvs = findViewById(R.id.manageStoriesV2);
+
+        dbHelper = new DBHelper(this);
+
+        dbHelper = new DBHelper(stories2.this);
+        StoryID =new ArrayList<>();
+        StoryTitle=new ArrayList<>();
+        StoryDesc=new ArrayList<>();
+
         Intent intent1 = getIntent();
         email = intent1.getStringExtra("email");
 
+        displayData();
+        manageStoriesRVAdapter=new manageStoriesRVAdapter(stories2.this,this,StoryID,StoryTitle,StoryDesc);
+        rvs.setAdapter(manageStoriesRVAdapter);
+        rvs.setLayoutManager(new LinearLayoutManager(stories2.this));
+
+
 
     }
+    void displayData() {
+        Cursor cursor = dbHelper.readAllStories();
+        if (cursor.getCount() == 0) {
+            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                StoryID.add(cursor.getInt(0));
+                StoryTitle.add(cursor.getString(1));
+                StoryDesc.add(cursor.getString(2));
+
+            }
+        }
+    }
+
     public void movePage(View view){
         Intent intent = new Intent(this, stories.class);
         intent.putExtra("email",email);
@@ -69,4 +112,6 @@ public class stories2 extends AppCompatActivity {
     public void ClickStories(View view) {
         recreate();
     }
+
+
 }

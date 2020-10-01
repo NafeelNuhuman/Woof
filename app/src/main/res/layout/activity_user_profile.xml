@@ -22,69 +22,70 @@
         android:id="@+id/textView43"
         android:layout_width="97dp"
         android:layout_height="29dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:paddingLeft="45px"
         android:text="User"
         android:textColor="#CA8080"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.046"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <TextView
         android:id="@+id/textView46"
         android:layout_width="97dp"
         android:layout_height="29dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="44dp"
         android:paddingLeft="45px"
         android:text="Orders"
         android:textColor="#CA8080"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/textView44"
-        tools:layout_editor_absoluteX="26dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView44" />
 
     <TextView
         android:id="@+id/textView49"
         android:layout_width="102dp"
         android:layout_height="37dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="45px"
         android:text="Dogs"
         android:textColor="#CA8080"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493"
-        tools:layout_editor_absoluteX="21dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" />
 
     <TextView
         android:id="@+id/textView52"
         android:layout_width="105dp"
         android:layout_height="34dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="10dp"
         android:paddingLeft="45px"
         android:text="Stories"
         android:textColor="#CA8080"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        tools:layout_editor_absoluteX="26dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView51" />
 
     <TextView
         android:id="@+id/textView54"
         android:layout_width="97dp"
         android:layout_height="29dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="32dp"
         android:paddingLeft="45px"
         android:text="Reviews"
         android:textColor="#CA8080"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textView52"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
     <TextView
         android:id="@+id/textView44"
@@ -161,7 +162,7 @@
         android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:paddingLeft="45px"
         android:text="Shipping Address"
         android:textSize="20dp"

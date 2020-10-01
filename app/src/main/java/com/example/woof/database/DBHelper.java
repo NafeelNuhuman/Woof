@@ -15,6 +15,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.woof.database.StoriesMaster.stories.TABLE_NAME;
+
 public class DBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Woof.db";
     private ByteArrayOutputStream prodByteArrayOutputStream;
@@ -78,7 +80,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //Stories table
         String CREATE_STORIES_TABLE=
-                "CREATE TABLE "+StoriesMaster.stories.TABLE_NAME+"("+
+                "CREATE TABLE "+ TABLE_NAME+"("+
                         StoriesMaster.stories.COLUMN_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
                         StoriesMaster.stories.COLUMN_NAME+" TEXT,"+
                         StoriesMaster.stories.COLUMN_DESC+" TEXT,"+
@@ -146,6 +148,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Stories
+    //Insert Stories
     public boolean addStory(storyModel stm){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv  =new ContentValues();
@@ -158,6 +161,17 @@ public class DBHelper extends SQLiteOpenHelper {
         return insert != -1;
 
     }
+    //Retrieve stories
+     public Cursor readAllStories(){
+        String query="SELECT * FROM "+ StoriesMaster.stories.TABLE_NAME;
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor =null;
+        if(db !=null){
+            cursor=db.rawQuery(query,null);
+        }
+        return cursor;
+    }
+
 
     //checking if email exists in seller table
     public boolean checkmail(String email) {
@@ -230,21 +244,22 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //insert product
     public boolean addProduct(productModel pm){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Bitmap imageBitmap = pm.getImage();
-        prodByteArrayOutputStream = new ByteArrayOutputStream();
-        imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
-        prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
-        ContentValues cv = new ContentValues();
-        cv.put(productMaster.product.COLUMN_NAME,pm.getName());
-        cv.put(productMaster.product.COLUMN_DESC,pm.getDesc());
-        cv.put(productMaster.product.COLUMN_PRICE,pm.getPrice());
-        cv.put(productMaster.product.COLUMN_IMAGE,prodImageInByte);
-        cv.put(productMaster.product.COLUMN_SELLER,pm.getSellerID());
+            SQLiteDatabase db = this.getWritableDatabase();
+            Bitmap imageBitmap = pm.getImage();
+            prodByteArrayOutputStream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
+            prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
-        long insert = db.insert(productMaster.product.TABLE_NAME,null,cv);
-        return insert != -2;
+            ContentValues cv = new ContentValues();
+            cv.put(productMaster.product.COLUMN_NAME,pm.getName());
+            cv.put(productMaster.product.COLUMN_DESC,pm.getDesc());
+            cv.put(productMaster.product.COLUMN_PRICE,pm.getPrice());
+            cv.put(productMaster.product.COLUMN_IMAGE,prodImageInByte);
+            cv.put(productMaster.product.COLUMN_SELLER,pm.getSellerID());
+
+            long insert = db.insert(productMaster.product.TABLE_NAME,null,cv);
+            return insert != -1;
     }
 
 
