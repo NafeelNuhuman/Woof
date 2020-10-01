@@ -51,18 +51,18 @@ public class uploadAccessory extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = prodName.getText().toString();
-                String desc = prodDesc.getText().toString();
-                float price = Float.parseFloat(prodPrice.getText().toString());
                 int sellerID = dbHelper.getSellerID(sellerEmail);
-
                 productModel pm;
 
-                if (name.equals("") || desc.equals("") || price == 0) {
+                if (prodName.equals("") || prodDesc.equals("") || prodPrice == null) {
                     Toast.makeText(uploadAccessory.this, "Please enter required information", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        pm = new productModel(-1, name, desc, price, imageToStore, sellerID);
+                        pm = new productModel(-1,
+                                prodName.getText().toString(),
+                                prodDesc.getText().toString(),
+                                Float.parseFloat(prodPrice.getText().toString()),
+                                imageToStore, sellerID);
                         dbHelper.addProduct(pm);
                         Toast.makeText(uploadAccessory.this, "Product uploaded successfully", Toast.LENGTH_SHORT).show();
 

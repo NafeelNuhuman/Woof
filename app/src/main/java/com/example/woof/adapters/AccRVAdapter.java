@@ -3,6 +3,7 @@ package com.example.woof.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.example.woof.R;
 import com.example.woof.accessories.singleItemView;
 import com.example.woof.database.productModel;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolderClass> {
@@ -42,17 +44,29 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
     @Override
     public void onBindViewHolder(@NonNull final RVViewHolderClass holder, int position) {
         productModel pm = productModelList.get(position);
+        final String name = pm.getName();
+        final String desc = pm.getDesc();
+        final int id = pm.getID();
+        final Bitmap image = pm.getImage();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.PNG,100,stream);
+        final byte[] imageInBytes = stream.toByteArray();
+
         holder.prodName.setText(pm.getName());
-        String price = Float.toString(pm.getPrice());
+        final String price = Float.toString(pm.getPrice());
         holder.prodPrice.setText(price);
         holder.prodImage.setImageBitmap(pm.getImage());
 
-        final int id = pm.getID();
+
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, singleItemView.class);
                 intent.putExtra("prodID",id);
+                intent.putExtra("prodName",name);
+                intent.putExtra("prodDesc",desc);
+                intent.putExtra("prodPrice",price);
+                intent.putExtra("prodImage",imageInBytes);
                 activity.startActivityForResult(intent,1);
             }
         });
