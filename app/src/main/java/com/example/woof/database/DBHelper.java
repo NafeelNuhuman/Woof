@@ -88,6 +88,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_STORIES_TABLE);
 
+        //Dog table
+        String CREATE_DOGS_TABLE=
+                "CREATE TABLE "+DogMaster.Dogs.TABLE_NAME+"("+
+                        DogMaster.Dogs.COLUMN_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        DogMaster.Dogs.COLUMN_NAME+" TEXT,"+
+                        DogMaster.Dogs.COLUMN_AGE+" TEXT,"+
+                        DogMaster.Dogs.COLUMN_SIZE+" TEXT,"+
+                        DogMaster.Dogs.COLUMN_GENDER+" TEXT,"+
+                        DogMaster.Dogs.COLUMN_BREED+" TEXT, "+
+                        DogMaster.Dogs.COLUMN_VAC+" TEXT, "+
+                        DogMaster.Dogs.COLUMN_IMAGE+ " BLOB," +
+                        DogMaster.Dogs.COLUMN_USER_ID+" INTEGER)";
+
+        db.execSQL(CREATE_DOGS_TABLE);
 
     }
 
@@ -248,6 +262,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return insert != -1;
     }
 
+
     //get list of products
     public ArrayList<productModel> getProductList(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -273,7 +288,38 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+//insert dog
+    public boolean addDog(DogModel dm){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Bitmap imageBitmap = dm.getImg();
+        prodByteArrayOutputStream = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
+        prodImageInByte = prodByteArrayOutputStream.toByteArray();
 
+        ContentValues cnv = new ContentValues();
+        cnv.put(DogMaster.Dogs.COLUMN_NAME,dm.getName());
+        cnv.put(DogMaster.Dogs.COLUMN_AGE,dm.getAge());
+        cnv.put(DogMaster.Dogs.COLUMN_SIZE,dm.getSize());
+        cnv.put(DogMaster.Dogs.COLUMN_GENDER,dm.getGender());
+        cnv.put(DogMaster.Dogs.COLUMN_BREED,dm.getBreed());
+        cnv.put(DogMaster.Dogs.COLUMN_VAC,dm.getVacc());
+        cnv.put(DogMaster.Dogs.COLUMN_IMAGE,prodImageInByte);
+        cnv.put(DogMaster.Dogs.COLUMN_USER_ID,dm.getUserID());
 
+        long insert = db.insert(DogMaster.Dogs.TABLE_NAME,null,cnv);
+        return insert != -2;
+    }
 
+//retrieve dog
+ //   public ArrayList<DogModel> getDogList(){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        ArrayList<DogModel> DogModelList = new ArrayList<>();
+
+ //       Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME, null);
+ //       if(cursor.getCount() != 0){
+//            while (cursor.moveToNext()){
+
+//            }
+//        }
+//    }
 }

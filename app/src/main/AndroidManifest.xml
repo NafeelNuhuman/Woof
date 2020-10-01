@@ -17,7 +17,6 @@
         <activity android:name=".other.userProfile" />
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets" />
-        <activity android:name=".dogs.uploadPet" />
         <activity android:name=".dogs.addDog" />
         <activity android:name=".dogs.manageMyDog" /> <!-- Other -->
         <activity android:name=".other.registerSeller" />

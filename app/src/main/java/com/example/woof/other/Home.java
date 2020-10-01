@@ -19,7 +19,6 @@ import com.example.woof.stories.stories2;
 public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-
     static String email;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
 

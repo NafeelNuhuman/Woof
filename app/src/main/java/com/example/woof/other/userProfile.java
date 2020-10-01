@@ -10,19 +10,26 @@ import android.view.View;
 import com.example.woof.R;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
+
+
+public class userProfile extends AppCompatActivity {
+
+    private String email;
+
+
 import com.example.woof.dogs.uploadPet;
 import com.example.woof.stories.manageStories;
 
 public class userProfile extends AppCompatActivity {
 
-    private static String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
-    }
+
 
 
     private static void redirectActivity(Activity activity, Class aClass) {
@@ -36,6 +43,7 @@ public class userProfile extends AppCompatActivity {
 
     public void moveToAddDogs(View view){
         Intent intent = new Intent(this, addDog.class);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
