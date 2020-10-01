@@ -12,7 +12,6 @@ import android.widget.Button;
 
 import com.example.woof.R;
 import com.example.woof.accessories.Accesories;
-import com.example.woof.dogs.uploadPet;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.other.Home;
 

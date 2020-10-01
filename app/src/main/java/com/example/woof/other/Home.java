@@ -19,7 +19,6 @@ import com.example.woof.stories.stories2;
 public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-
     static String email;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
 
@@ -28,7 +27,6 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        SharedPreferences
 
         drawerLayout = findViewById(R.id.drawer_layout);
 

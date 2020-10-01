@@ -55,7 +55,6 @@ public class uploadAccessory extends AppCompatActivity {
                 String desc = prodDesc.getText().toString();
                 float price = Float.parseFloat(prodPrice.getText().toString());
                 int sellerID = dbHelper.getSellerID(sellerEmail);
-
                 productModel pm;
 
                 if (name.equals("") || desc.equals("") || price == 0) {
@@ -104,6 +103,8 @@ public class uploadAccessory extends AppCompatActivity {
         }catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
 
