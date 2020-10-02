@@ -43,7 +43,7 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final RVViewHolderClass holder, int position) {
-        productModel pm = productModelList.get(position);
+        final productModel pm = productModelList.get(position);
         final String name = pm.getName();
         final String desc = pm.getDesc();
         final int id = pm.getID();
@@ -53,7 +53,7 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
         final byte[] imageInBytes = stream.toByteArray();
 
         holder.prodName.setText(pm.getName());
-        final String price = Float.toString(pm.getPrice());
+        final String price = Double.toString(pm.getPrice());
         holder.prodPrice.setText(price);
         holder.prodImage.setImageBitmap(pm.getImage());
 
@@ -65,7 +65,7 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
                 intent.putExtra("prodID",id);
                 intent.putExtra("prodName",name);
                 intent.putExtra("prodDesc",desc);
-                intent.putExtra("prodPrice",price);
+                intent.putExtra("prodPrice",pm.getPrice());
                 intent.putExtra("prodImage",imageInBytes);
                 activity.startActivityForResult(intent,1);
             }
