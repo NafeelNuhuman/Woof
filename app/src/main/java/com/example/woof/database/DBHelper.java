@@ -165,13 +165,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
     //Retrieve stories
-     public Cursor readAllStories(){
+    public Cursor readAllStories(){
         String query="SELECT * FROM "+ StoriesMaster.stories.TABLE_NAME;
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor =null;
         if(db !=null){
             cursor=db.rawQuery(query,null);
         }
+        return cursor;
+    }
+
+    //Retrieve product details with product ID
+    public Cursor readProductWithID(String ID){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor =null;
+        cursor= db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME + " WHERE " + productMaster.product.COLUMN_ID + " LIKE ?",new String[]{ID});
         return cursor;
     }
 

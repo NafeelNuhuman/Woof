@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -57,17 +58,21 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
         holder.prodPrice.setText(price);
         holder.prodImage.setImageBitmap(pm.getImage());
 
-
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
                 Intent intent = new Intent(context, singleItemView.class);
                 intent.putExtra("prodID",id);
                 intent.putExtra("prodName",name);
                 intent.putExtra("prodDesc",desc);
                 intent.putExtra("prodPrice",pm.getPrice());
                 intent.putExtra("prodImage",imageInBytes);
-                activity.startActivityForResult(intent,1);
+
+                    activity.startActivityForResult(intent, 1);
+                }catch (Exception e){
+                    Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

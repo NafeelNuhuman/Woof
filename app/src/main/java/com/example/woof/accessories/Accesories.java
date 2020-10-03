@@ -36,7 +36,7 @@ public class Accesories extends AppCompatActivity {
     }
 
     public void getData(){
-        adapter = new AccRVAdapter(dbHelper.getProductList(),Accesories.this,this);
+        adapter = new AccRVAdapter(dbHelper.getProductList(),Accesories.this,Accesories.this);
         rv.setHasFixedSize(true);
 
         rv.setLayoutManager(new GridLayoutManager(this,2));

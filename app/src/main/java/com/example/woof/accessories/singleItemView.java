@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,56 +15,56 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.woof.R;
+import com.example.woof.database.DBHelper;
 
 public class singleItemView extends AppCompatActivity {
 
-    private TextView name,description,price;
-    private ImageView image;
-    private Button btnAddtoCart;
+    private TextView priceTV;
     private Context context;
-    static Double prodPrice;
+    static double prodPrice;
+    private String name,desc,price;
+    private byte[] imageInBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_item_view);
 
-        name = findViewById(R.id.singleItemprodName);
-        description = findViewById(R.id.singleItemProdDesc);
-        price = findViewById(R.id.singleItemProdPrice);
-        image = findViewById(R.id.singleItemProdImage);
-        btnAddtoCart = findViewById(R.id.addToCart);
-
-
-
+        TextView nameTV = findViewById(R.id.singleItemprodName);
+        TextView descriptionTV = findViewById(R.id.singleItemProdDesc);
+        priceTV = findViewById(R.id.singleItemProdPrice);
+        ImageView imageView = findViewById(R.id.singleItemProdImage);
         Intent intent = getIntent();
         int prodID = intent.getIntExtra("prodID",0);
         String id = String.valueOf(prodID);
-        String prodName = intent.getStringExtra("prodName");
-        String prodDesc = intent.getStringExtra("prodDesc");
-        prodPrice = intent.getDoubleExtra("prodPrice",0);
 
-        byte[] prodImageInBytes = intent.getByteArrayExtra("prodImage");
-        Bitmap prodImage = BitmapFactory.decodeByteArray(prodImageInBytes,0,prodImageInBytes.length);
-        name.setText(prodName);
-        description.setText(prodDesc);
-        price.setText(String.valueOf(prodPrice));
+        DBHelper dbHelper = new DBHelper(this);
+        Cursor cursor = dbHelper.readProductWithID(id);
 
+        if (cursor.getCount() == 0){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+        }else {
+            cursor.moveToNext();
+            name = cursor.getString(1);
+            desc = cursor.getString(2);
+            price = String.valueOf(cursor.getDouble(3));
+            imageInBytes = cursor.getBlob(4);
 
-        btnAddtoCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showQuantityDialog();
-            }
-        });
+         }
 
+        Bitmap prodImage = BitmapFactory.decodeByteArray(imageInBytes,0,imageInBytes.length);
 
+        nameTV.setText(name);
+        descriptionTV.setText(desc);
+        priceTV.setText(price);
+        imageView.setImageBitmap(prodImage);
 
     }
 
-    private double total = 0;
+   /* private double total = 0;
     private double cost = 0;
     private int quantity = 0;
     private void showQuantityDialog() {
@@ -109,5 +110,5 @@ public class singleItemView extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 }
