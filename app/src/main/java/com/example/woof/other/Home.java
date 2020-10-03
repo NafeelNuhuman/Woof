@@ -3,6 +3,8 @@ package com.example.woof.other;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +14,8 @@ import android.view.View;
 
 import com.example.woof.accessories.Accesories;
 import com.example.woof.R;
+import com.example.woof.adapters.AccRVAdapter;
+import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.stories.stories;
 import com.example.woof.stories.stories2;
@@ -21,7 +25,9 @@ public class Home extends AppCompatActivity {
     DrawerLayout drawerLayout;
     static String email;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
-
+    RecyclerView rv1,rv2;
+    AccRVAdapter accAdapter;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +35,26 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-
+        rv1 = findViewById(R.id.homeRV1);
+        rv2 = findViewById(R.id.homeRV2);
+        dbHelper = new DBHelper(this);
         Intent intent1 = getIntent();
         email = intent1.getStringExtra("email");
 
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
         editor.putString("email", email);
         editor.apply();
+        getData();
 
     }
 
+    public void getData(){
+        accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this);
+        rv2.setHasFixedSize(true);
+
+        rv2.setLayoutManager(new GridLayoutManager(this,2));
+        rv2.setAdapter(accAdapter);
+    }
     public void ClickMenu(View view) {
         openDrawer(drawerLayout);
 
