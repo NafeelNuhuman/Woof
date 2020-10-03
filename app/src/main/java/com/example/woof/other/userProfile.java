@@ -11,11 +11,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.woof.R;
+import com.example.woof.database.DBHelper;
+import com.example.woof.dogs.addDog;
+import com.example.woof.dogs.manageMyDog;
 import com.example.woof.accessories.Accesories;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
 import com.example.woof.dogs.viewAllpets;
+
 import com.example.woof.stories.manageStories;
 import com.example.woof.stories.stories2;
 
@@ -37,6 +41,7 @@ public class userProfile extends AppCompatActivity {
         userMail = findViewById(R.id.userMail);
         String name = dbHelper.getUserName(email);
         drawerLayout = findViewById(R.id.drawer_layout);
+
         userName.setText(name);
         userMail.setText(email);
 
@@ -57,8 +62,7 @@ public class userProfile extends AppCompatActivity {
     }
 
     public void moveToMyDogs(View view){
-        Intent intent = new Intent(this, manageMyDog.class);
-        startActivity(intent);
+        redirectActivity(userProfile.this,manageMyDog.class);
     }
 
     public void moveToManageStories(View view){

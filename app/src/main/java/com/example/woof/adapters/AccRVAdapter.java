@@ -39,7 +39,7 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
         /*LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.activity_single_accessory_card,parent,false);*/
         return new RVViewHolderClass(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_single_accessory_card,parent,false));
+                .inflate(R.layout.activity_single_dog_card,parent,false));
     }
 
     @Override
@@ -64,15 +64,11 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
                 try {
                 Intent intent = new Intent(context, singleItemView.class);
                 intent.putExtra("prodID",id);
-                intent.putExtra("prodName",name);
-                intent.putExtra("prodDesc",desc);
-                intent.putExtra("prodPrice",pm.getPrice());
-                intent.putExtra("prodImage",imageInBytes);
-
-                    activity.startActivityForResult(intent, 1);
+                activity.startActivityForResult(intent,1);
                 }catch (Exception e){
                     Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
