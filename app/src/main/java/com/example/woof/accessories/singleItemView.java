@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -16,11 +17,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.woof.R;
 import com.example.woof.database.DBHelper;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 
 public class singleItemView extends AppCompatActivity {
+
 
     private TextView priceTV;
     private Context context;
@@ -28,17 +32,19 @@ public class singleItemView extends AppCompatActivity {
     private String name,desc,price;
     private byte[] imageInBytes;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_item_view);
+
 
         TextView nameTV = findViewById(R.id.singleItemprodName);
         TextView descriptionTV = findViewById(R.id.singleItemProdDesc);
         priceTV = findViewById(R.id.singleItemProdPrice);
         ImageView imageView = findViewById(R.id.singleItemProdImage);
         Intent intent = getIntent();
-        int prodID = intent.getIntExtra("prodID",0);
+        int prodID = intent.getIntExtra("prodID", 0);
         String id = String.valueOf(prodID);
 
         DBHelper dbHelper = new DBHelper(this);
@@ -52,7 +58,6 @@ public class singleItemView extends AppCompatActivity {
             desc = cursor.getString(2);
             price = String.valueOf(cursor.getDouble(3));
             imageInBytes = cursor.getBlob(4);
-
          }
 
         Bitmap prodImage = BitmapFactory.decodeByteArray(imageInBytes,0,imageInBytes.length);
@@ -61,7 +66,7 @@ public class singleItemView extends AppCompatActivity {
         descriptionTV.setText(desc);
         priceTV.setText(price);
         imageView.setImageBitmap(prodImage);
-
+        });
     }
 
    /* private double total = 0;
