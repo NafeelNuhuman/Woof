@@ -1,8 +1,11 @@
 package com.example.woof.other;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,21 +15,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class cart extends AppCompatActivity {
 
-    private FloatingActionButton addToCartBtn;
-    private ImageView productImage;
-    private ElegantNumberButton numberButton;
-    private TextView productPrice, productDescription, productName;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private TextView txtTotalAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        addToCartBtn = (FloatingActionButton) findViewById(R.id.add_to_cart_btn);
-        numberButton = (ElegantNumberButton)  findViewById(R.id.product_qty_btn);
-        productImage = (ImageView) findViewById(R.id.product_image_details);
-        productName = (TextView) findViewById(R.id.product_name_details);
-        productDescription = (TextView) findViewById(R.id.product_desc_details);
-        productPrice = (TextView) findViewById(R.id.product_price_details);
+      recyclerView = findViewById(R.id.cartRecyclerView);
+      recyclerView.setHasFixedSize(true);
+      layoutManager = new LinearLayoutManager(this);
+      recyclerView.setLayoutManager(layoutManager);
+
+      txtTotalAmount = (TextView) findViewById(R.id.totalPrice);
     }
 }

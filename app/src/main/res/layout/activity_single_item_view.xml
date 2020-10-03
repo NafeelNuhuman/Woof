@@ -12,6 +12,7 @@
         android:layout_height="330dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_report_image"
         android:background="@drawable/edit_text_border"/>
@@ -41,6 +42,7 @@
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/singleItemProdDesc" />
+
 
     <TextView
         android:id="@+id/textView8"
@@ -91,7 +93,8 @@
         android:id="@+id/addToCart"
         android:layout_width="57dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         app:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,4 +103,5 @@
         app:layout_constraintVertical_bias="0.466"
         app:rippleColor="#FFFFFF"
         app:srcCompat="@drawable/round_add_shopping_cart_white_18dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

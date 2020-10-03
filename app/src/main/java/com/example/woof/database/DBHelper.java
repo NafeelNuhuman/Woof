@@ -28,6 +28,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //Cart table
+        String CREATE_TABLE_CART =
+                "CREATE TABLE " + cartMaster.cart.TABLE_NAME + "(" +
+                        cartMaster.cart.ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        cartMaster.cart.NAME + " TEXT, " +
+                        cartMaster.cart.IMAGE + " BLOB," +
+                        cartMaster.cart.PRODUCT_QUANTITY + " INTEGER, " +
+                        cartMaster.cart.PER_UNIT + " DOUBLE, " +
+                        cartMaster.cart.TOTAL + " DOUBLE, " +
+                        cartMaster.cart.USER_ID + " INTEGER)";
+        db.execSQL(CREATE_TABLE_CART);
+
 
         //Pet Owner table
         String CREATE_TABLE_PET_OWNER =
@@ -268,7 +280,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<productModel> productModelList = new ArrayList<>();
 
-        Cursor cursor = db.rawQuery(" SELECT * FROM " + productMaster.product.TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME, null);
         if(cursor.getCount() != 0){
             while (cursor.moveToNext()){
                 int ID = cursor.getInt(0);
@@ -286,6 +298,13 @@ public class DBHelper extends SQLiteOpenHelper {
         else{
             return  null;
         }
+    }
+    //retrieving all data
+
+    public Cursor alldata(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME , null);
+        return cursor;
     }
 
 //insert dog
