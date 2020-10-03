@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.woof">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -9,9 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".stories.single_manage_mystories_card"></activity>
         <activity android:name=".stories.manage_story_single_item" />
-
+        <activity android:name=".dogs.single_dog_card"></activity>
+        <activity android:name=".dogs.manage_single_dog" />
+        <activity android:name=".stories.manage_story_single_item" />
+        <activity android:name=".stories.manageStories" />
         <activity android:name=".accessories.singleAccessoryCard" />
         <activity android:name=".accessories.manage_accessory_single_item" />
         <activity android:name=".other.sellerProfile" /> <!-- Nimran -->
