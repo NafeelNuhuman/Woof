@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".stories.single_manage_mystories_card"></activity>
+        <activity android:name=".stories.manage_story_single_item" />
         <activity android:name=".dogs.single_dog_card"></activity>
         <activity android:name=".dogs.manage_single_dog" />
-
         <activity android:name=".stories.manage_story_single_item" />
         <activity android:name=".stories.manageStories" />
         <activity android:name=".accessories.singleAccessoryCard" />

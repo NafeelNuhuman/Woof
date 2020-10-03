@@ -14,12 +14,12 @@ import com.example.woof.R;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
+import com.example.woof.stories.mystories;
 import com.example.woof.accessories.Accesories;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
 import com.example.woof.dogs.viewAllpets;
-
 import com.example.woof.stories.manageStories;
 import com.example.woof.stories.stories2;
 
@@ -29,6 +29,7 @@ public class userProfile extends AppCompatActivity {
     TextView userName,userMail;
     DBHelper dbHelper;
     DrawerLayout drawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,12 @@ public class userProfile extends AppCompatActivity {
         userName = findViewById(R.id.userName);
         userMail = findViewById(R.id.userMail);
         String name = dbHelper.getUserName(email);
+
         drawerLayout = findViewById(R.id.drawer_layout);
 
         userName.setText(name);
         userMail.setText(email);
+
 
     }
 
@@ -66,7 +69,7 @@ public class userProfile extends AppCompatActivity {
     }
 
     public void moveToManageStories(View view){
-        redirectActivity(this, manageStories.class);
+        redirectActivity(userProfile.this,mystories.class);
     }
 
 
@@ -96,4 +99,5 @@ public class userProfile extends AppCompatActivity {
     }
 
     public  void  ClickUser(View view){ redirectActivity(this,userProfile.class);}
+
 }
