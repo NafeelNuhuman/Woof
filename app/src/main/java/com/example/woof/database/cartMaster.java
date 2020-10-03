@@ -7,7 +7,7 @@ public class cartMaster {
     }
     public static class cart implements BaseColumns {
         public static final String TABLE_NAME = "Cart";
-        public static final String ITEM_ID ="ProductID";
+        public static final String ITEM_ID ="itemID";
         public static final String NAME ="Name";
         public static final String IMAGE ="Image";
         public static final String PRODUCT_QUANTITY = "ProductQuantity";

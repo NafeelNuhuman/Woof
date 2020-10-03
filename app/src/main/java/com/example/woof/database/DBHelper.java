@@ -300,14 +300,13 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
     //retrieving all data
-
     public Cursor alldata(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME , null);
         return cursor;
     }
 
-//insert dog
+    //insert dog
     public boolean addDog(DogModel dm){
         SQLiteDatabase db = this.getWritableDatabase();
         Bitmap imageBitmap = dm.getImg();
@@ -328,6 +327,27 @@ public class DBHelper extends SQLiteOpenHelper {
         long insert = db.insert(DogMaster.Dogs.TABLE_NAME,null,cnv);
         return insert != -2;
     }
+
+    //insert product to cart
+    public boolean addProductToCart(cartModel cm){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Bitmap imageBitmap = cm.getImage();
+        prodByteArrayOutputStream = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,prodByteArrayOutputStream);
+        prodImageInByte = prodByteArrayOutputStream.toByteArray();
+
+        ContentValues cv = new ContentValues();
+        cv.put(cartMaster.cart.NAME,cm.getName());
+        cv.put(cartMaster.cart.IMAGE,prodImageInByte);
+        cv.put(cartMaster.cart.PRODUCT_QUANTITY,cm.getQuantity());
+        cv.put(cartMaster.cart.PER_UNIT,cm.getCost());
+        cv.put(cartMaster.cart.TOTAL,cm.getTotal());
+        cv.put(cartMaster.cart.USER_ID,cm.getUserID());
+
+        long insert = db.insert(cartMaster.cart.TABLE_NAME,null,cv);
+        return insert != -1;
+    }
+
 
 //retrieve dog
  //   public ArrayList<DogModel> getDogList(){
