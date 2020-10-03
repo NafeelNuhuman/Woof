@@ -32,12 +32,12 @@
             android:id="@+id/btnDelete"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginEnd="10dp"
             android:text="Delete"
             android:textColor="@color/design_default_color_background"
             app:backgroundTint="@color/deleteBtn"
-            app:layout_constraintTop_toBottomOf="@+id/prodImage"
-            tools:layout_editor_absoluteX="231dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnUpdate"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageView
             android:id="@+id/prodImage"

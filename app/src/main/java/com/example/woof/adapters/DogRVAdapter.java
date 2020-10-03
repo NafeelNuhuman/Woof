@@ -36,7 +36,7 @@ public class DogRVAdapter extends RecyclerView.Adapter<DogRVAdapter.RVViewHolder
     @Override
     public RVViewHolderClass onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new RVViewHolderClass(LayoutInflater.from(parent.getContext()).inflate
-                (R.layout.activity_manage_single_dog,parent,false));
+                (R.layout.activity_single_dog_card,parent,false));
     }
 
     @Override
@@ -68,8 +68,6 @@ public class DogRVAdapter extends RecyclerView.Adapter<DogRVAdapter.RVViewHolder
     public int getItemCount(){ return DogModelList.size(); }
 
     public static class RVViewHolderClass extends RecyclerView.ViewHolder {
-
-
         private TextView dogName, dogBreed;
         private ImageView dogImage;
         private CardView card;

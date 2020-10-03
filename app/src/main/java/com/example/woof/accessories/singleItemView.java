@@ -29,7 +29,7 @@ public class singleItemView extends AppCompatActivity {
     private TextView priceTV;
     private Context context;
     static double prodPrice;
-    private String name,desc,price;
+    private String name, desc, price;
     private byte[] imageInBytes;
 
 
@@ -50,26 +50,26 @@ public class singleItemView extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(this);
         Cursor cursor = dbHelper.readProductWithID(id);
 
-        if (cursor.getCount() == 0){
+        if (cursor.getCount() == 0) {
             Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             cursor.moveToNext();
             name = cursor.getString(1);
             desc = cursor.getString(2);
             price = String.valueOf(cursor.getDouble(3));
             imageInBytes = cursor.getBlob(4);
-         }
+        }
 
-        Bitmap prodImage = BitmapFactory.decodeByteArray(imageInBytes,0,imageInBytes.length);
+        Bitmap prodImage = BitmapFactory.decodeByteArray(imageInBytes, 0, imageInBytes.length);
 
         nameTV.setText(name);
         descriptionTV.setText(desc);
         priceTV.setText(price);
         imageView.setImageBitmap(prodImage);
-        });
     }
 
-   /* private double total = 0;
+
+    /*private double total = 0;
     private double cost = 0;
     private int quantity = 0;
     private void showQuantityDialog() {

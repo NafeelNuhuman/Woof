@@ -302,15 +302,6 @@ public class DBHelper extends SQLiteOpenHelper {
        cursor.moveToFirst();
         return cursor.getString(0);
     }
-=======
-    //get user ID
-    public String getUserName(String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_FNAME +
-                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + " LIKE ? ", new String[]{email});
-        cursor.moveToFirst();
-        return cursor.getString(0);
-    }
 
     //insert product
     public boolean addProduct(productModel pm){
@@ -407,7 +398,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return insert != -1;
     }
 
-
+    //delete accessory
      public void deleteAccessory(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + " =?",new String[]{id});

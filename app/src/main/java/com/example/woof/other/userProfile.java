@@ -20,7 +20,6 @@ import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
 import com.example.woof.dogs.viewAllpets;
-import com.example.woof.stories.manageStories;
 import com.example.woof.stories.stories2;
 
 public class userProfile extends AppCompatActivity {

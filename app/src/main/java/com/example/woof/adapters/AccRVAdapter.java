@@ -36,10 +36,9 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
     @NonNull
     @Override
     public RVViewHolderClass onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /*LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.activity_single_accessory_card,parent,false);*/
-        return new RVViewHolderClass(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_single_dog_card,parent,false));
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.activity_single_accessory_card,parent,false);
+        return new RVViewHolderClass(view);
     }
 
     @Override
@@ -76,7 +75,8 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
 
     @Override
     public int getItemCount() {
-        return productModelList.size();
+        int size = productModelList.size();
+        return size;
     }
 
     public  static  class RVViewHolderClass extends RecyclerView.ViewHolder
