@@ -30,7 +30,7 @@ public class manageAccessories extends AppCompatActivity {
     }
 
     public void getData(){
-        adapter = new manageAccRVAdapter(dbHelper.getProductList());
+        adapter = new manageAccRVAdapter(dbHelper.getProductList(),manageAccessories.this,manageAccessories.this);
         rv.setHasFixedSize(true);
 
         rv.setLayoutManager(new LinearLayoutManager(this));

@@ -37,36 +37,47 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
                 petOwnerModel pomodel = null;
                 DBHelper dbHelper = new DBHelper(register.this);
-                String emaila = email.getText().toString();
+                if (fname.getText().toString().equals("") ||
+                lname.getText().toString().equals("") ||
+                contact.getText().toString().equals("") ||
+                email.getText().toString().equals("") ||
+                dateOfBirth.getText().toString().equals("") ||
+                pwd.getText().toString().equals("") ||
+                conPwd.getText().toString().equals("") ){
+                    Toast.makeText(register.this, "Enter Required Information", Toast.LENGTH_SHORT).show();
+                }else {
+                    if (pwd.getText().toString().equals(conPwd.getText().toString())) {
+                        boolean checkmail = dbHelper.checkmail(email.getText().toString());
+                        if (checkmail) {
+                            try {
+                                pomodel = new petOwnerModel(-1,
+                                        fname.getText().toString(),
+                                        lname.getText().toString(),
+                                        email.getText().toString(),
+                                        dateOfBirth.getText().toString(),
+                                        Integer.parseInt(contact.getText().toString()),
+                                        pwd.getText().toString());
+                                dbHelper.addPetOwner(pomodel);
+                                Toast.makeText(register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(register.this, Login.class);
+                                startActivity(intent);
+                            } catch (Exception e) {
+                                Toast.makeText(register.this, "Enter necessary information with appropriate values", Toast.LENGTH_SHORT).show();
+                            }
 
-                if (pwd.getText().toString().equals(conPwd.getText().toString())) {
-                    boolean checkmail = dbHelper.checkpetownermail(emaila);
-                    if (checkmail == true) {
-                        try {
-                            pomodel = new petOwnerModel(-1,
-                                    fname.getText().toString(),
-                                    lname.getText().toString(),
-                                    email.getText().toString(),
-                                    dateOfBirth.getText().toString(),
-                                    Integer.parseInt(contact.getText().toString()),
-                                    pwd.getText().toString());
-                            dbHelper.addPetOwner(pomodel);
-                            Toast.makeText(register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(register.this, Login.class);
-                            startActivity(intent);
-                        } catch (Exception e) {
-                            Toast.makeText(register.this, "Enter necessary information with appropriate values", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(register.this, "Email already registered", Toast.LENGTH_SHORT).show();
                         }
-
                     } else {
-                        Toast.makeText(register.this, "Email already registered", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                        recreate();
                     }
-                } else {
-                    Toast.makeText(register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-                    recreate();
                 }
-            }
-        });
-    }
 
+            }
+
+        });
+
+    }
 }
+

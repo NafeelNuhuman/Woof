@@ -25,12 +25,12 @@
         android:id="@+id/textView3"
         android:layout_width="179dp"
         android:layout_height="39dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="@string/Description_Sh"
         android:textColor="#CA8080"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etStoryTitle" />
 
@@ -47,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StoryDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/StoryDescription"
+        app:layout_constraintVertical_bias="0.685" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -65,16 +66,16 @@
 
     <EditText
         android:id="@+id/StoryDescription"
-        android:layout_width="346dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="324dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/edit_text_border"
         android:hint="@string/Descrip_Share"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 

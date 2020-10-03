@@ -34,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorBG"
@@ -44,14 +45,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4"
         app:layout_constraintVertical_bias="0.0">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/manageAccRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
+
 
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/manageAccRV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="56dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
