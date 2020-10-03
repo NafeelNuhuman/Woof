@@ -3,27 +3,50 @@ package com.example.woof.dogs;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.woof.R;
 import com.example.woof.accessories.Accesories;
+import com.example.woof.adapters.manageDogRVAdapter;
+import com.example.woof.database.DBHelper;
 import com.example.woof.other.Home;
 import com.example.woof.stories.stories;
+
+
 
 public class manageMyDog extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    RecyclerView RV;
+    DBHelper dbHelper;
+    manageDogRVAdapter Adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_my_dog);
+       setContentView(R.layout.activity_manage_my_dog);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+        RV = findViewById(R.id.manageDogRV);
+      dbHelper = new DBHelper(this);
+        this.getData();
     }
+
+    private void getData() {
+        Adapter = new manageDogRVAdapter(dbHelper.getDogList());
+        RV.setHasFixedSize(true);
+
+        RV.setLayoutManager(new LinearLayoutManager(this));
+        RV.setAdapter(Adapter);
+    }
+
 
     public void ClickMenu(View view) {
         openDrawer(drawerLayout);

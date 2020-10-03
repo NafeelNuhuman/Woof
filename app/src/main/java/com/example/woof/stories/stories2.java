@@ -18,7 +18,6 @@ import com.example.woof.R;
 import com.example.woof.accessories.Accesories;
 import com.example.woof.adapters.manageStoriesRVAdapter;
 import com.example.woof.database.DBHelper;
-import com.example.woof.dogs.uploadPet;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.other.Home;
 

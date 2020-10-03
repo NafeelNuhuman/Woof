@@ -35,7 +35,6 @@ public class manageAccRVAdapter extends RecyclerView.Adapter<manageAccRVAdapter.
         holder.proDesc.setText(pm.getDesc());
         String price = Float.toString(pm.getPrice());
         holder.prodPrice.setText(price);
-        holder.prodName.setText(pm.getName());
         holder.prodImage.setImageBitmap(pm.getImage());
     }
 

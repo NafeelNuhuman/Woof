@@ -83,9 +83,9 @@ public class addDog extends AppCompatActivity {
         try {
             Intent intent = new Intent();
             intent.setType("image/*");
+            startActivityForResult(intent, PICK_IMAGE_REQUEST);
 
             intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(intent, PICK_IMAGE_REQUEST);
         }catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }

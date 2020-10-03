@@ -195,6 +195,14 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
+    //retrieve dog details with dogID
+    public Cursor readDogWithID(String ID){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        cursor = db.rawQuery("SELECT * FROM " + DogMaster.Dogs.TABLE_NAME +" WHERE " + DogMaster.Dogs.COLUMN_ID +" LIKE ? ", new String[]{ID});
+        return cursor;
+    }
+
     //check email and password
     public boolean checkEmailPwd(String email, String pwd, String table) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -242,6 +250,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor.getInt(0);
     }
 
+    //get user ID
+    public String getUserName(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_FNAME +
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + "=?", new String[]{email});
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
     //insert product
     public boolean addProduct(productModel pm){
 
@@ -311,15 +327,30 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 //retrieve dog
- //   public ArrayList<DogModel> getDogList(){
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        ArrayList<DogModel> DogModelList = new ArrayList<>();
+    public ArrayList<DogModel> getDogList(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<DogModel> DogModelList = new ArrayList<>();
 
- //       Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME, null);
- //       if(cursor.getCount() != 0){
-//            while (cursor.moveToNext()){
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DogMaster.Dogs.TABLE_NAME, null);
+        if(cursor.getCount() != 0){
+            while (cursor.moveToNext()){
+                int ID = cursor.getInt(0);
+                String name = cursor.getString(1);
+                int age = cursor.getInt(2);
+                String size = cursor.getString(3);
+                String gender = cursor.getString(4);
+                String breed = cursor.getString(5);
+                String vacc = cursor.getString(6);
+                byte[] img = cursor.getBlob(7);
+                int UserID = cursor.getInt(8);
 
-//            }
-//        }
-//    }
+                Bitmap imgBitmap = BitmapFactory.decodeByteArray(img, 0,img.length);
+                DogModelList.add(new DogModel(ID,name,age,size,gender,breed,vacc,imgBitmap,UserID));
+            }
+            return DogModelList;
+       }
+        else {
+            return null;
+        }
+   }
 }
