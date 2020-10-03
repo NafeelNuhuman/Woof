@@ -153,9 +153,11 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv  =new ContentValues();
 
+
         cv.put(StoriesMaster.stories.COLUMN_NAME,stm.getTitle());
         cv.put(StoriesMaster.stories.COLUMN_DESC,stm.getDescrip());
         cv.put(StoriesMaster.stories.COLUMN_USERID,stm.getUserId());
+
 
         long insert=db.insert(StoriesMaster.stories.TABLE_NAME,null,cv);
         return insert != -1;
@@ -169,6 +171,14 @@ public class DBHelper extends SQLiteOpenHelper {
         if(db !=null){
             cursor=db.rawQuery(query,null);
         }
+        return cursor;
+    }
+
+    //Retrieve my stories
+    public Cursor readAllMyStories(String ID){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery("SELECT * FROM " + StoriesMaster.stories.TABLE_NAME +" WHERE " +
+                StoriesMaster.stories.COLUMN_USERID + " LIKE ? ", new String[]{ID});
         return cursor;
     }
 
@@ -237,9 +247,35 @@ public class DBHelper extends SQLiteOpenHelper {
     public int getUserID(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_ID +
-                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + "=?", new String[]{email});
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + " LIKE ? ", new String[]{email});
         cursor.moveToFirst();
         return cursor.getInt(0);
+    }
+
+    //get username using email
+    public String getUserName(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_FNAME +
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + " LIKE ? ", new String[]{email});
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
+    //get username using ID
+    public String getUserNameUsingID(String userID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_FNAME +
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_ID + " LIKE ? ", new String[]{userID});
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+    //get user ID using story ID
+    public String getUserID(int storyID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + StoriesMaster.stories.COLUMN_USERID +
+                " FROM " + StoriesMaster.stories.TABLE_NAME + " WHERE " + StoriesMaster.stories.COLUMN_ID + "=?", new String[]{String.valueOf(storyID)});
+        cursor.moveToFirst();
+        return cursor.getString(0);
     }
 
     //insert product

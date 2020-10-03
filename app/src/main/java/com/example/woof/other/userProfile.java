@@ -6,22 +6,19 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.woof.R;
+import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.addDog;
 import com.example.woof.dogs.manageMyDog;
-
-
-public class userProfile extends AppCompatActivity {
-
-    private String email;
-
-
-import com.example.woof.dogs.uploadPet;
-import com.example.woof.stories.manageStories;
+import com.example.woof.stories.mystories;
 
 public class userProfile extends AppCompatActivity {
 
+    private static String email;
+    TextView userName,userMail;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +26,17 @@ public class userProfile extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
+        dbHelper = new DBHelper(this);
+        userName = findViewById(R.id.userName);
+        userMail = findViewById(R.id.userMail);
+        String name = dbHelper.getUserName(email);
+        userName.setText(name);
+        userMail.setText(email);
 
-
+    }
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("email",email);
         activity.startActivity(intent);
@@ -53,6 +55,8 @@ public class userProfile extends AppCompatActivity {
     }
 
     public void moveToManageStories(View view){
-        redirectActivity(this, manageStories.class);
+        redirectActivity(userProfile.this,mystories.class);
     }
+
+
 }

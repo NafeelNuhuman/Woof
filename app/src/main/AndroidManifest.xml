@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".stories.manage_story_single_item"></activity>
-        <activity android:name=".stories.manageStories" />
+        <activity android:name=".stories.single_manage_mystories_card"></activity>
+        <activity android:name=".stories.manage_story_single_item" />
+
         <activity android:name=".accessories.singleAccessoryCard" />
         <activity android:name=".accessories.manage_accessory_single_item" />
         <activity android:name=".other.sellerProfile" /> <!-- Nimran -->

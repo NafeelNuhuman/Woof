@@ -1,12 +1,19 @@
 package com.example.woof.stories;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.woof.R;
@@ -17,12 +24,17 @@ import com.example.woof.database.storyModel;
 import com.example.woof.other.Login;
 import com.example.woof.other.registerSeller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class stories extends AppCompatActivity {
 
     private EditText Title, Description;
     private Button ShareButton;
     DBHelper dbHelper;
     int userID;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +44,14 @@ public class stories extends AppCompatActivity {
         Title = findViewById(R.id.etStoryTitle);
         Description = findViewById(R.id.StoryDescription);
         ShareButton = findViewById(R.id.UserStoriesbtn);
+        DatePickerDialog.OnDateSetListener setListener;
         dbHelper = new DBHelper(getApplicationContext());
 
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
         userID = dbHelper.getUserID(email);
+
 
         ShareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +78,7 @@ public class stories extends AppCompatActivity {
                 }
             }
         });
-
-
     }
+
+
 }

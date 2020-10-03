@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MystorySingleCard"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="30dp"
+    app:cardCornerRadius="10dp"
+    android:layout_height="200dp"
+    tools:context=".stories.single_manage_mystories_card">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/edit_text_border">
+
+        <TextView
+            android:id="@+id/MyStoryDesc"
+            android:layout_width="315dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/joti_one"
+            android:text="@string/story_des_my_story"
+            app:layout_constraintBottom_toTopOf="@+id/StoryDeleteBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MyStoryTiTLE" />
+
+        <Button
+            android:id="@+id/StoryDeleteBtn"
+            android:layout_width="122dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/Delete_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.929"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintVertical_bias="0.727" />
+
+        <TextView
+            android:id="@+id/MyStoryTiTLE"
+            android:layout_width="142dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/coiny"
+            android:text="@string/Story"
+            android:textColor="#070707"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+

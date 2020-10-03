@@ -1,5 +1,7 @@
 package com.example.woof.database;
 
+import android.graphics.Bitmap;
+
 public class storyModel {
     private int storyId;
     private String Title;
