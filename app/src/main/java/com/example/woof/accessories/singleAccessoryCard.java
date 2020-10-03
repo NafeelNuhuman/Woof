@@ -23,11 +23,6 @@ public class singleAccessoryCard extends AppCompatActivity {
         price = findViewById(R.id.prodPriceCard);
         image = findViewById(R.id.prodImageCard);
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
 }

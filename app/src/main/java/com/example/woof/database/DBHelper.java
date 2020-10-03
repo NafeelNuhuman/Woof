@@ -26,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
     }
 
+    private Context context;
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -103,6 +104,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_DOGS_TABLE);
 
+        //cart table
+
     }
 
     @Override
@@ -162,7 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
     //Retrieve stories
-     public Cursor readAllStories(){
+    public Cursor readAllStories(){
         String query="SELECT * FROM "+ StoriesMaster.stories.TABLE_NAME;
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor =null;
@@ -172,24 +175,24 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //Retrieve product details with product ID
+    public Cursor readProductWithID(String ID){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor =null;
+        cursor= db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME + " WHERE " + productMaster.product.COLUMN_ID + " LIKE ?",new String[]{ID});
+        return cursor;
+    }
 
-    //checking if email exists in seller table
+
+    //checking if email is already registered
     public boolean checkmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + sellerMaster.seller.TABLE_NAME +
                 " WHERE " + sellerMaster.seller.COLUMN_EMAIL + " LIKE ?", new String[]{email});
-        if (cursor.getCount() > 0)
-            return false;
-        else
-            return true;
-    }
 
-    //checking if email exists in pet owner table
-    public boolean checkpetownermail(String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + petOwnerMaster.petOwner.TABLE_NAME +
+        Cursor cursor1 = db.rawQuery("SELECT * FROM " + petOwnerMaster.petOwner.TABLE_NAME +
                 " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + " LIKE ?", new String[]{email});
-        if (cursor.getCount() > 0)
+        if (cursor.getCount() > 0 || cursor1.getCount()> 0)
             return false;
         else
             return true;
@@ -242,6 +245,15 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor.getInt(0);
     }
 
+    //get user ID
+    public String getUserName(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + petOwnerMaster.petOwner.COLUMN_FNAME +
+                " FROM " + petOwnerMaster.petOwner.TABLE_NAME + " WHERE " + petOwnerMaster.petOwner.COLUMN_EMAIL + "=?", new String[]{email});
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
     //insert product
     public boolean addProduct(productModel pm){
 
@@ -274,7 +286,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 int ID = cursor.getInt(0);
                 String name = cursor.getString(1);
                 String desc = cursor.getString(2);
-                float price = cursor.getFloat(3);
+                Double price = cursor.getDouble(3);
                 byte[] image = cursor.getBlob(4);
                 int sellerID = cursor.getInt(5);
 
@@ -308,6 +320,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
         long insert = db.insert(DogMaster.Dogs.TABLE_NAME,null,cnv);
         return insert != -2;
+    }
+
+     public void deleteAccessory(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + " =?",new String[]{id});
+        if (result == -1){
+            Toast.makeText(context, "Delete Failed", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
 //retrieve dog

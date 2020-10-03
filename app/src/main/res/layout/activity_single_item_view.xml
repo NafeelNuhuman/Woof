@@ -33,12 +33,11 @@
         android:id="@+id/singleItemProdPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:text="@string/product_price"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/addToCart"
-        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/singleItemProdDesc" />
 
@@ -91,13 +90,15 @@
         android:id="@+id/addToCart"
         android:layout_width="57dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
         android:clickable="true"
-        app:backgroundTint="#673AB7"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.466"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/singleItemProdPrice"
+        app:layout_constraintTop_toBottomOf="@+id/singleItemProdDesc"
         app:rippleColor="#FFFFFF"
-        app:srcCompat="@drawable/round_add_shopping_cart_white_18dp" />
+        app:srcCompat="@drawable/round_add_shopping_cart_white_18dp" >
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

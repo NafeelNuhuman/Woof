@@ -52,7 +52,6 @@
         android:hint="@string/regCEmail"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
-
         android:textColorHint="#ffffff"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etSellerPhone" />
 
     <Button
-        android:id="@+id/btnReg"
+        android:id="@+id/btnSellerReg"
         android:layout_width="217dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"

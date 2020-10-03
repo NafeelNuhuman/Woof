@@ -29,7 +29,6 @@ public class uploadAccessory extends AppCompatActivity {
     private DBHelper dbHelper;
     ImageView image1;
     private static final int PICK_IMAGE_REQUEST = 100;
-    private Uri imageFilePath;
     private Bitmap imageToStore;
 
     @Override
@@ -54,17 +53,18 @@ public class uploadAccessory extends AppCompatActivity {
                 int sellerID = dbHelper.getSellerID(sellerEmail);
                 productModel pm;
 
-                if (prodName.equals("") || prodDesc.equals("") || prodPrice == null) {
+                if (prodName.getText().toString().equals("") || prodDesc.getText().toString().equals("") || prodPrice.getText().toString().equals("")) {
                     Toast.makeText(uploadAccessory.this, "Please enter required information", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
                         pm = new productModel(-1,
                                 prodName.getText().toString(),
                                 prodDesc.getText().toString(),
-                                Float.parseFloat(prodPrice.getText().toString()),
+                                Double.parseDouble(prodPrice.getText().toString()),
                                 imageToStore, sellerID);
                         dbHelper.addProduct(pm);
                         Toast.makeText(uploadAccessory.this, "Product uploaded successfully", Toast.LENGTH_SHORT).show();
+                        finish();
 
                     } catch (Exception e) {
                         Toast.makeText(uploadAccessory.this, "Upload Unsuccessful", Toast.LENGTH_SHORT).show();
@@ -95,9 +95,8 @@ public class uploadAccessory extends AppCompatActivity {
         try {
             super.onActivityResult(requestCode, resultCode, data);
             if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData()!=null){
-                imageFilePath = data.getData();
-                imageToStore = MediaStore.Images.Media.getBitmap(getContentResolver(),imageFilePath);
-
+                Uri imageFilePath = data.getData();
+                imageToStore = MediaStore.Images.Media.getBitmap(getContentResolver(), imageFilePath);
                 image1.setImageBitmap(imageToStore);
 
             }

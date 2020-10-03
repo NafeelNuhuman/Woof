@@ -6,11 +6,11 @@ public class productModel {
     private int ID;
     private String name;
     private String desc;
-    private float price;
+    private Double price;
     private Bitmap image;
     private int sellerID;
 
-    public productModel(int ID, String name, String desc, float price, int sellerID) {
+    public productModel(int ID, String name, String desc, Double price, int sellerID) {
         this.ID = ID;
         this.name = name;
         this.desc = desc;
@@ -18,7 +18,7 @@ public class productModel {
         this.sellerID = sellerID;
     }
 
-    public productModel(int ID, String name, String desc, float price, Bitmap image, int sellerID) {
+    public productModel(int ID, String name, String desc, Double price, Bitmap image, int sellerID) {
         this.ID = ID;
         this.name = name;
         this.desc = desc;
@@ -51,11 +51,11 @@ public class productModel {
         this.desc = desc;
     }
 
-    public float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
