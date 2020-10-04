@@ -19,6 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.woof.R;
 import com.example.woof.database.DBHelper;
+import com.example.woof.database.cartModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -30,7 +33,10 @@ public class singleItemView extends AppCompatActivity {
     private Context context;
     static double prodPrice;
     private String name, desc, price;
+    private int userID;
     private byte[] imageInBytes;
+    Bitmap prodImage;
+    DBHelper dbHelper;
 
 
     @Override
@@ -38,17 +44,18 @@ public class singleItemView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_item_view);
 
-
+        context = this;
+        FloatingActionButton btnAddToCart = findViewById(R.id.addToCart);
         TextView nameTV = findViewById(R.id.singleItemprodName);
         TextView descriptionTV = findViewById(R.id.singleItemProdDesc);
         priceTV = findViewById(R.id.singleItemProdPrice);
         ImageView imageView = findViewById(R.id.singleItemProdImage);
         Intent intent = getIntent();
         int prodID = intent.getIntExtra("prodID", 0);
-        String id = String.valueOf(prodID);
-
-        DBHelper dbHelper = new DBHelper(this);
-        Cursor cursor = dbHelper.readProductWithID(id);
+        String prodIdInString = String.valueOf(prodID);
+        userID = intent.getIntExtra("userID",0);
+        dbHelper = new DBHelper(this);
+        Cursor cursor = dbHelper.readProductWithID(prodIdInString);
 
         if (cursor.getCount() == 0) {
             Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
@@ -56,20 +63,27 @@ public class singleItemView extends AppCompatActivity {
             cursor.moveToNext();
             name = cursor.getString(1);
             desc = cursor.getString(2);
-            price = String.valueOf(cursor.getDouble(3));
+            prodPrice = cursor.getDouble(3);
             imageInBytes = cursor.getBlob(4);
         }
 
-        Bitmap prodImage = BitmapFactory.decodeByteArray(imageInBytes, 0, imageInBytes.length);
+        prodImage = BitmapFactory.decodeByteArray(imageInBytes, 0, imageInBytes.length);
 
         nameTV.setText(name);
         descriptionTV.setText(desc);
-        priceTV.setText(price);
+        priceTV.setText(String.valueOf(prodPrice));
         imageView.setImageBitmap(prodImage);
+
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityDialog();
+            }
+        });
     }
 
 
-    /*private double total = 0;
+    private double total = 0;
     private double cost = 0;
     private int quantity = 0;
     private void showQuantityDialog() {
@@ -77,6 +91,7 @@ public class singleItemView extends AppCompatActivity {
         ImageButton plusBtn = view.findViewById(R.id.imagePlusButton);
         ImageButton minusBtn = view.findViewById(R.id.imageMinusButton);
         final TextView quantityTV = view.findViewById(R.id.quantity);
+        final TextView totalTV = view.findViewById(R.id.dialogQuantityTotal);
         Button addToCartBtn = view.findViewById(R.id.btnAddToCart);
         final TextView priceTV = view.findViewById(R.id.dialogQuantityPrice);
 
@@ -84,22 +99,23 @@ public class singleItemView extends AppCompatActivity {
         quantity = 1;
         cost = Double.parseDouble(priceInString);
         total = Double.parseDouble(priceInString);
-
+        String totalInString = String.valueOf(total);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
 
-        price.setText(priceInString);
-        quantityTV.setText(quantity);
+        priceTV.setText(priceInString);
+        quantityTV.setText(String.valueOf(quantity));
+        totalTV.setText(totalInString);
 
-        AlertDialog dialog = builder.create();
+        final AlertDialog dialog = builder.create();
         dialog.show();
 
         plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                total = total + cost;
+                total = add(total,cost);
                 quantity++;
-                priceTV.setText("Rs." + total);
+                totalTV.setText(String.valueOf(total));
                 quantityTV.setText(String.valueOf(quantity));
             }
         });
@@ -108,12 +124,35 @@ public class singleItemView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (quantity>1){
-                    total = total - cost;
+                    total = substract(total,cost);
                     quantity--;
-                    priceTV.setText("Rs." + total);
+                    totalTV.setText(String.valueOf(total));
                     quantityTV.setText(String.valueOf(quantity));
                 }
             }
         });
-    }*/
+
+        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cartModel cm;
+                try {
+                    cm = new cartModel(-1,name,quantity,prodImage,cost,total,userID);
+                    dbHelper.addProductToCart(cm);
+                    Toast.makeText(singleItemView.this, "Item added to cart", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }catch (Exception e){
+                    Toast.makeText(singleItemView.this, "Unable to add to cart", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private double substract(double total, double cost) {
+        return total - cost;
+    }
+
+    public double add(double num1,double num2){
+        return  num1 + num2;
+    }
 }

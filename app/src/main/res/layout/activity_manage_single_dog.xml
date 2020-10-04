@@ -30,7 +30,7 @@
 
 
         <Button
-            android:id="@+id/BtnDelete"
+            android:id="@+id/btndelete"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -38,6 +38,8 @@
             android:textColor="@color/design_default_color_background"
             app:backgroundTint="@color/deleteBtn"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/BtnUpdate"
             app:layout_constraintTop_toBottomOf="@+id/DogImage" />
 
         <ImageView
@@ -53,7 +55,7 @@
             android:id="@+id/BtnUpdate"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:text="Update"
             android:textColor="@color/design_default_color_background"
@@ -66,31 +68,45 @@
 
         <TextView
             android:id="@+id/DogAge"
-            android:layout_width="78dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="8dp"
-            android:text="XXx
-" app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="79dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:text="XX"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DogName" />
 
         <TextView
-            android:id="@+id/DogBreed"
+            android:id="@+id/dogBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Breed"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/BtnUpdate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DogAge" />
 
         <TextView
+            android:id="@+id/DogBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Breed"
+            app:layout_constraintBottom_toTopOf="@+id/BtnUpdate"
+            app:layout_constraintStart_toEndOf="@+id/dogBreed"
+            app:layout_constraintTop_toBottomOf="@+id/DogAge"
+            app:layout_constraintVertical_bias="0.533" />
+
+
+        <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="12dp"
             android:text="years old"
-            app:layout_constraintStart_toEndOf="@+id/DogAge"
-            tools:layout_editor_absoluteY="59dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/DogAge"
+            app:layout_constraintStart_toEndOf="@+id/DogAge" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

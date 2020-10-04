@@ -16,6 +16,7 @@ import com.example.woof.adapters.DogRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.database.DogMaster;
 import com.example.woof.accessories.Accesories;
+import com.example.woof.other.Home;
 import com.example.woof.other.userProfile;
 import com.example.woof.stories.stories2;
 
@@ -67,11 +68,11 @@ public class viewAllpets extends AppCompatActivity {
     }
 
     public void ClickHome(View view) {
-        recreate();
+        redirectActivity(this, Home.class);
     }
 
     public void ClickDog(View view) {
-        redirectActivity(this, viewAllpets.class);
+        recreate();
     }
 
     public void ClickAccessories(View view) {
