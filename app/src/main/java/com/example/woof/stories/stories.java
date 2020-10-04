@@ -69,7 +69,7 @@ public class stories extends AppCompatActivity {
 
                         dbHelper.addStory(stm);
                         Toast.makeText(stories.this, "Shared successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), stories.class);
+                        Intent intent = new Intent(getApplicationContext(), stories2.class);
                         startActivity(intent);
 
                     } catch (Exception e) {

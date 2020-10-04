@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -24,6 +26,8 @@ import com.example.woof.other.Home;
 
 import java.util.ArrayList;
 
+import static android.os.Build.ID;
+
 public class mystories extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -32,6 +36,7 @@ public class mystories extends AppCompatActivity {
     Button  StoryDeletebtn;
     private String email;
     private String userID;
+    private String storyID;
     ArrayList<Integer> StoryID;
     ArrayList<String> StoryTitle,StoryDesc;
     manageStoriesRVAdapter manageStoriesRVAdapter;
@@ -62,6 +67,10 @@ public class mystories extends AppCompatActivity {
 
 
     }
+    
+
+
+
     void mystoriesDisplay(){
         Cursor cursor= dbHelper.readAllMyStories(userID);
         if (cursor.getCount() == 0) {
@@ -75,6 +84,7 @@ public class mystories extends AppCompatActivity {
             }
         }
     }
+
 
     public void movePage(View view){
         Intent intent = new Intent(this, mystories.class);

@@ -196,6 +196,18 @@ public class DBHelper extends SQLiteOpenHelper {
                 StoriesMaster.stories.COLUMN_USERID + " LIKE ? ", new String[]{ID});
         return cursor;
     }
+    //Delete My Stories
+    public void DeleteOneRowOfStories(String ID){
+        SQLiteDatabase db =this.getWritableDatabase();
+        long result= db.delete(StoriesMaster.stories.TABLE_NAME, StoriesMaster.stories.COLUMN_ID + "=?",new String[]{ID});
+        if(result == -1){
+            Toast.makeText(context,"Oops!Failed to delete",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context,"Successfully deleted!",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
 
     //Retrieve product details with product ID
@@ -480,6 +492,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return null;
         }
    }
+
    //delete dog
     public void deleteDog(String id){
     SQLiteDatabase db = this.getWritableDatabase();
@@ -489,5 +502,5 @@ public class DBHelper extends SQLiteOpenHelper {
     }else {
         Toast.makeText(context, "Data deleted Successfully", Toast.LENGTH_SHORT).show();
     }
-    }
+    
 }
