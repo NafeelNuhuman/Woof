@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:text="@string/title"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -40,6 +40,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_margin="5dp"
+                tools:listitem="@layout/activity_single_accessory_card"
                 android:id="@+id/AccRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

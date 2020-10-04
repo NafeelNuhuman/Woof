@@ -14,9 +14,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/main_toolbar"/>
+        <include
+            android:id="@+id/include"
+            layout="@layout/main_toolbar"
+            tools:layout_editor_absoluteX="-81dp"
+            tools:layout_editor_absoluteY="-7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="12dp"
+            android:text="Stories"
+            android:textStyle="bold"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/include"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -34,7 +48,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/manageStoriesV2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/activity_story_single_card"/>
             </LinearLayout>
         </ScrollView>
 

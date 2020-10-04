@@ -11,44 +11,52 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".stories.single_manage_mystories_card"></activity>
-        <activity android:name=".stories.manage_story_single_item" />
-        <activity android:name=".dogs.single_dog_card"></activity>
+        <!-- Nimran -->
+        <activity android:name=".dogs.single_dog_card" />
         <activity android:name=".dogs.manage_single_dog" />
-        <activity android:name=".stories.manage_story_single_item" />
-        <activity android:name=".stories.manageStories" />
-        <activity android:name=".accessories.singleAccessoryCard" />
-        <activity android:name=".accessories.manage_accessory_single_item" />
-        <activity android:name=".other.sellerProfile" /> <!-- Nimran -->
-        <activity android:name=".other.userProfile" />
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets" />
-        <activity android:name=".dogs.addDog" />
-        <activity android:name=".dogs.manageMyDog" /> <!-- Other -->
+        <activity android:name=".dogs.addDog"
+            android:parentActivityName=".other.userProfile"/>
+        <activity android:name=".dogs.manageMyDog"
+            android:parentActivityName=".other.userProfile"/>
+        <!-- Other -->
+        <activity android:name=".other.sellerProfile" />
+        <activity android:name=".other.userProfile" />
         <activity android:name=".other.registerSeller" />
         <activity android:name=".other.registerOptions">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".other.register" />
         <activity android:name=".other.Login" />
-        <activity android:name=".other.cart" />
-        <activity android:name=".other.Home" /> <!-- Nethmini -->
-        <activity android:name=".stories.mystories" />
+        <activity android:name=".other.Home" />
+        <!-- Nethmini -->
+        <activity android:name=".stories.mystories"
+            android:parentActivityName=".other.userProfile"/>
         <activity android:name=".stories.stories" />
         <activity android:name=".stories.singleStoryView" />
-        <activity android:name=".stories.stories2" /> <!-- Atchu -->
+        <activity android:name=".stories.stories2" />
+        <activity android:name=".stories.single_manage_mystories_card" />
+        <activity android:name=".stories.manage_story_single_item" />
+        <!-- Atchu -->
         <activity android:name=".reviews.clickReview" />
         <activity android:name=".reviews.reviewItem" />
-        <activity android:name=".reviews.editReview" /> <!-- Nafeel -->
+        <activity android:name=".reviews.editReview" />
+        <activity android:name=".other.cart" />
+        <!-- Nafeel -->
         <activity android:name=".accessories.updateAccessory" />
-        <activity android:name=".accessories.manageAccessories" />
-        <activity android:name=".accessories.uploadAccessory" />
+        <activity android:name=".accessories.manageAccessories"
+            android:parentActivityName=".other.sellerProfile"/>
+        <activity android:name=".accessories.uploadAccessory"
+            android:parentActivityName=".other.sellerProfile"/>
         <activity android:name=".accessories.Accesories" />
         <activity android:name=".accessories.singleItemView" />
+        <activity android:name=".accessories.singleAccessoryCard" />
+        <activity android:name=".accessories.manage_accessory_single_item"
+            android:parentActivityName=".accessories.manageAccessories"/>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -5,9 +5,8 @@
     android:layout_width="360dp"
     android:layout_height="wrap_content"
     android:layout_marginLeft="30dp"
-    android:layout_marginTop="15dp"
+    android:layout_marginTop="10dp"
     android:layout_marginRight="30dp"
-    android:layout_marginBottom="10dp"
     android:elevation="5dp"
     app:cardBackgroundColor="@color/cardview_light_background"
     app:cardCornerRadius="10dp">
@@ -22,7 +21,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/itemName"
+                android:id="@+id/cartCardItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -34,7 +33,7 @@
 
 
             <ImageView
-                android:id="@+id/prodImage"
+                android:id="@+id/cartCardProdImage"
                 android:layout_width="132dp"
                 android:layout_height="110dp"
                 android:layout_marginTop="10dp"
@@ -45,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/prodPrice"
+                android:id="@+id/cartCardProdPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -53,7 +52,7 @@
                 android:text="TextView"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/textView25"
-                app:layout_constraintTop_toBottomOf="@+id/itemName" />
+                app:layout_constraintTop_toBottomOf="@+id/cartCardItemName" />
 
             <TextView
                 android:id="@+id/textView25"
@@ -63,7 +62,7 @@
                 android:text="Price : "
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBaseline_toBaselineOf="@+id/prodPrice"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cartCardProdPrice"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -75,7 +74,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/prodPrice" />
+                app:layout_constraintTop_toBottomOf="@+id/cartCardProdPrice" />
 
             <TextView
                 android:id="@+id/cartCardItemTotal"
@@ -94,11 +93,11 @@
                 android:layout_marginStart="36dp"
                 android:text="X"
                 android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/prodPrice"
-                app:layout_constraintStart_toEndOf="@+id/prodPrice" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/cartCardProdPrice"
+                app:layout_constraintStart_toEndOf="@+id/cartCardProdPrice" />
 
             <TextView
-                android:id="@+id/quantity"
+                android:id="@+id/cartCardQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -113,19 +112,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/constraintLayout">
 
             <Button
                 android:id="@+id/btnRemoveFromCart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
                 android:text="REMOVE"
                 android:textColor="@color/design_default_color_background"
                 app:backgroundTint="@color/deleteBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="144dp" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </LinearLayout>
