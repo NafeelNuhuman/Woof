@@ -368,7 +368,7 @@ public class DBHelper extends SQLiteOpenHelper {
             }
             return totalCost;
         }else {
-            return -99;
+            return 0.00;
         }
     }
 

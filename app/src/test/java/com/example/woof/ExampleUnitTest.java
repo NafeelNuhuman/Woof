@@ -14,7 +14,6 @@ public class ExampleUnitTest {
         singleItemView = new singleItemView();
     }
 
-    //
     @Test
     public void testAddition(){
         double result = singleItemView.add(5,5);

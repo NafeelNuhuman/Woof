@@ -25,13 +25,14 @@
         <activity android:name=".other.userProfile" />
         <activity android:name=".other.registerSeller" />
         <activity android:name=".other.registerOptions">
+        </activity>
+        <activity android:name=".other.register" />
+        <activity android:name=".other.Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".other.register" />
-        <activity android:name=".other.Login" />
         <activity android:name=".other.Home" />
         <!-- Nethmini -->
         <activity android:name=".stories.mystories"
