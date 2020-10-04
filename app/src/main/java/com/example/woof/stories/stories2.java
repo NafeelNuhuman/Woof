@@ -19,6 +19,7 @@ import com.example.woof.accessories.Accesories;
 import com.example.woof.adapters.storiesRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.viewAllpets;
+import com.example.woof.other.Home;
 import com.example.woof.other.userProfile;
 
 import java.util.ArrayList;
@@ -106,7 +107,7 @@ public class stories2 extends AppCompatActivity {
     }
 
     public void ClickHome(View view) {
-        recreate();
+        redirectActivity(this, Home.class);
     }
 
     public void ClickDog(View view) {
@@ -118,7 +119,7 @@ public class stories2 extends AppCompatActivity {
     }
 
     public void ClickStories(View view) {
-        redirectActivity(this, stories2.class);
+        recreate();
     }
 
     public  void  ClickUser(View view){ redirectActivity(this, userProfile.class);}
