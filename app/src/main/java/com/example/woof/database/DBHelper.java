@@ -401,7 +401,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //delete accessory
      public void deleteAccessory(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + " =?",new String[]{id});
+        long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + "LIKE ?",new String[]{id});
         if (result == -1){
             Toast.makeText(context, "Delete Failed", Toast.LENGTH_SHORT).show();
         }else{
@@ -436,4 +436,14 @@ public class DBHelper extends SQLiteOpenHelper {
             return null;
         }
    }
+   //delete dog
+    public void deleteDog(String id){
+    SQLiteDatabase db = this.getWritableDatabase();
+    long Result = db.delete(DogMaster.Dogs.TABLE_NAME,DogMaster.Dogs.COLUMN_ID + " LIKE ? ", new String[]{id});
+    if (Result == -1){
+        Toast.makeText(context, "Delete failed!", Toast.LENGTH_SHORT).show();
+    }else {
+        Toast.makeText(context, "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+    }
+    }
 }

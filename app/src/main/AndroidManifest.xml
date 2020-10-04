@@ -15,8 +15,6 @@
         <activity android:name=".stories.manage_story_single_item" />
         <activity android:name=".dogs.single_dog_card"></activity>
         <activity android:name=".dogs.manage_single_dog" />
-        <activity android:name=".stories.manage_story_single_item" />
-        <activity android:name=".stories.manageStories" />
         <activity android:name=".accessories.singleAccessoryCard" />
         <activity android:name=".accessories.manage_accessory_single_item" />
         <activity android:name=".other.sellerProfile" /> <!-- Nimran -->
@@ -29,7 +27,6 @@
         <activity android:name=".other.registerOptions">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
