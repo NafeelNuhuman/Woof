@@ -82,7 +82,7 @@ public class userProfile extends AppCompatActivity {
     }
 
     public void ClickHome(View view) {
-        recreate();
+        redirectActivity(this,Home.class);
     }
 
     public void ClickDog(View view) {
@@ -97,6 +97,6 @@ public class userProfile extends AppCompatActivity {
         redirectActivity(this, stories2.class);
     }
 
-    public  void  ClickUser(View view){ redirectActivity(this,userProfile.class);}
+    public  void  ClickUser(View view){ recreate();}
 
 }

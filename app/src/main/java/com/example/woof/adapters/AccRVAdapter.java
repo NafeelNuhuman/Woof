@@ -26,11 +26,13 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
     ArrayList<productModel> productModelList;
     private Context context;
     Activity activity;
+    private int userID;
 
-    public AccRVAdapter(ArrayList<productModel> productModelList,Activity activity,Context context) {
+    public AccRVAdapter(ArrayList<productModel> productModelList,Activity activity,Context context,int userID) {
         this.productModelList = productModelList;
         this.context = context;
         this.activity = activity;
+        this.userID = userID;
     }
 
     @NonNull
@@ -63,6 +65,7 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
                 try {
                 Intent intent = new Intent(context, singleItemView.class);
                 intent.putExtra("prodID",id);
+                intent.putExtra("userID",userID);
                 activity.startActivityForResult(intent,1);
                 }catch (Exception e){
                     Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();

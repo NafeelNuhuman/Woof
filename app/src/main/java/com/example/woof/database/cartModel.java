@@ -12,13 +12,13 @@ public class cartModel {
     private int userID;
 
     public cartModel(int itemID,String name,int quantity,Bitmap image,double cost, double total, int userID){
-        itemID = itemID;
-        name = name;
+        this.itemID = itemID;
+        this.name = name;
         this.quantity = quantity;
-        image = image;
-        cost = cost;
+        this.image = image;
+        this.cost = cost;
         this.total = total;
-        userID = userID;
+        this.userID = userID;
     }
 
     public int getItemID() {
