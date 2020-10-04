@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
@@ -15,6 +16,7 @@ import android.view.View;
 import com.example.woof.accessories.Accesories;
 import com.example.woof.R;
 import com.example.woof.adapters.AccRVAdapter;
+import com.example.woof.adapters.DogRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.stories.stories;
@@ -27,6 +29,7 @@ public class Home extends AppCompatActivity {
     public static final String MY_PREFS_NAME = "MyPrefsFile";
     RecyclerView rv1,rv2;
     AccRVAdapter accAdapter;
+    DogRVAdapter dogAdapter;
     DBHelper dbHelper;
 
     @Override
@@ -48,11 +51,16 @@ public class Home extends AppCompatActivity {
 
     }
 
-    public void getData(){
+   public void getData(){
         accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this);
+        dogAdapter = new DogRVAdapter(dbHelper.getDogList(),Home.this,this);
+        rv1.setHasFixedSize(true);
         rv2.setHasFixedSize(true);
 
+        rv1.setLayoutManager(new GridLayoutManager(this,2));
         rv2.setLayoutManager(new GridLayoutManager(this,2));
+
+        rv1.setAdapter(dogAdapter);
         rv2.setAdapter(accAdapter);
     }
     public void ClickMenu(View view) {
