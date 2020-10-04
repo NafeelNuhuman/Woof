@@ -1,5 +1,6 @@
 package com.example.woof.database;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +14,6 @@ import androidx.annotation.Nullable;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import static com.example.woof.database.StoriesMaster.stories.TABLE_NAME;
 
@@ -200,11 +200,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public void DeleteOneRowOfStories(String ID){
         SQLiteDatabase db =this.getWritableDatabase();
         long result= db.delete(StoriesMaster.stories.TABLE_NAME, StoriesMaster.stories.COLUMN_ID + "=?",new String[]{ID});
-        if(result == -1){
-            Toast.makeText(context,"Oops!Failed to delete",Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context,"Successfully deleted!",Toast.LENGTH_SHORT).show();
-        }
     }
 
 
@@ -446,7 +441,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //delete accessory
-     public boolean deleteAccessory(String id){
+     public void deleteAccessory(String id){
         SQLiteDatabase db = this.getWritableDatabase();
 
         long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + "LIKE ?",new String[]{id});
@@ -494,13 +489,13 @@ public class DBHelper extends SQLiteOpenHelper {
    }
 
    //delete dog
-    public void deleteDog(String id){
-    SQLiteDatabase db = this.getWritableDatabase();
-    long Result = db.delete(DogMaster.Dogs.TABLE_NAME,DogMaster.Dogs.COLUMN_ID + " LIKE ? ", new String[]{id});
-    if (Result == -1){
-        Toast.makeText(context, "Delete failed!", Toast.LENGTH_SHORT).show();
-    }else {
-        Toast.makeText(context, "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+    public void deleteDog(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long Result = db.delete(DogMaster.Dogs.TABLE_NAME, DogMaster.Dogs.COLUMN_ID + " LIKE ? ", new String[]{id});
+        if (Result == -1) {
+            Toast.makeText(context, "Delete failed!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
-    
 }

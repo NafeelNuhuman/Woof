@@ -42,8 +42,6 @@ public class stories2 extends AppCompatActivity {
         shareStory = findViewById(R.id.btnShareStory);
         drawerLayout = findViewById(R.id.drawer_layout);
 
-
-
         rvs = findViewById(R.id.manageStoriesV2);
 
         dbHelper = new DBHelper(this);

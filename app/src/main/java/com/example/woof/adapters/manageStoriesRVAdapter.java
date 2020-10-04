@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -33,11 +34,12 @@ public class manageStoriesRVAdapter extends RecyclerView.Adapter<manageStoriesRV
     private Activity activity;
     DBHelper dbHelper;
 
-    public manageStoriesRVAdapter(Context context, ArrayList storyTitle, ArrayList storyDesc, ArrayList storyID) {
+    public manageStoriesRVAdapter(Activity activity,Context context, ArrayList storyTitle, ArrayList storyDesc, ArrayList storyID) {
         this.context = context;
         this.StoryTitle = storyTitle;
         this.StoryDesc = storyDesc;
         this.StoryID = storyID;
+        this.activity = activity;
     }
 
 
@@ -67,7 +69,12 @@ public class manageStoriesRVAdapter extends RecyclerView.Adapter<manageStoriesRV
 
     @Override
     public int getItemCount() {
-        return StoryID.size();
+        try {
+            return StoryID.size();
+        }catch (Exception e){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -93,10 +100,9 @@ public class manageStoriesRVAdapter extends RecyclerView.Adapter<manageStoriesRV
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                DBHelper dbHelper =new DBHelper(context);
+                dbHelper =new DBHelper(context);
                 dbHelper.DeleteOneRowOfStories(String.valueOf(storyID));
                 activity.finish();
-
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

@@ -61,7 +61,7 @@ public class mystories extends AppCompatActivity {
         userID = String.valueOf(dbHelper.getUserID(email));
 
         mystoriesDisplay();
-        manageStoriesRVAdapter =new manageStoriesRVAdapter(mystories.this,StoryTitle,StoryDesc,StoryID);
+        manageStoriesRVAdapter =new manageStoriesRVAdapter(mystories.this,mystories.this,StoryTitle,StoryDesc,StoryID);
         mys.setAdapter(manageStoriesRVAdapter);
         mys.setLayoutManager(new LinearLayoutManager(mystories.this));
 

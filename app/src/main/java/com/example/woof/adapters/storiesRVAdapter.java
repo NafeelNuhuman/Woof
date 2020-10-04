@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -26,7 +27,7 @@ public class storiesRVAdapter extends RecyclerView.Adapter<storiesRVAdapter.MyVi
     private ArrayList StoryTitle,StoryDesc;
     private  ArrayList StoryID;
     private  String userName;
-    private Activity activity;
+    Activity activity;
     DBHelper dbHelper;
 
     public storiesRVAdapter(Context context, Activity activity, ArrayList StoryID, ArrayList StoryTitle, ArrayList StoryDesc){
@@ -69,7 +70,12 @@ public class storiesRVAdapter extends RecyclerView.Adapter<storiesRVAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return  StoryID.size();
+        try {
+            return StoryID.size();
+        }catch (Exception e){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

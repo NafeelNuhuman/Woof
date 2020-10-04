@@ -56,7 +56,7 @@ public class Home extends AppCompatActivity {
     }
 
    public void getData(){
-        accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this);
+        accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this,userID);
         dogAdapter = new DogRVAdapter(dbHelper.getDogList(),Home.this,this);
         rv1.setHasFixedSize(true);
         rv2.setHasFixedSize(true);

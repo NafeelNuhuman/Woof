@@ -148,7 +148,7 @@ public class singleItemView extends AppCompatActivity {
         });
     }
 
-    private double substract(double total, double cost) {
+    public double substract(double total, double cost) {
         return total - cost;
     }
 

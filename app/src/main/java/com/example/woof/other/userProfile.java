@@ -81,6 +81,7 @@ public class userProfile extends AppCompatActivity {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
+
     public void ClickHome(View view) {
         redirectActivity(this,Home.class);
     }

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +22,7 @@ import com.example.woof.stories.stories2;
 
 public class Accesories extends AppCompatActivity {
 
+    private DrawerLayout drawerLayout;
     RecyclerView rv;
     DBHelper dbHelper;
     AccRVAdapter adapter;
@@ -31,6 +34,7 @@ public class Accesories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accesories);
         rv = findViewById(R.id.AccRecyclerView);
+        drawerLayout = findViewById(R.id.drawer_layout);
         dbHelper = new DBHelper(this);
         this.getData();
         Intent intent = getIntent();
@@ -47,8 +51,10 @@ public class Accesories extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
-
-
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+    
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
 
@@ -57,6 +63,10 @@ public class Accesories extends AppCompatActivity {
         activity.startActivity(intent);
 
     }
+    public void ClickMenu(View view) {
+        openDrawer(drawerLayout);
+    }
+
 
     public void ClickHome(View view) {
         redirectActivity(this, Home.class);

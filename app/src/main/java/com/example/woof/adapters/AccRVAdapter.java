@@ -78,8 +78,12 @@ public class AccRVAdapter extends RecyclerView.Adapter<AccRVAdapter.RVViewHolder
 
     @Override
     public int getItemCount() {
-        int size = productModelList.size();
-        return size;
+        try {
+            return productModelList.size();
+        }catch (Exception e){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
     }
 
     public  static  class RVViewHolderClass extends RecyclerView.ViewHolder

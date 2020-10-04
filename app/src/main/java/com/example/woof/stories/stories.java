@@ -49,7 +49,7 @@ public class stories extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
+        final String email = intent.getStringExtra("email");
         userID = dbHelper.getUserID(email);
 
 
@@ -70,6 +70,7 @@ public class stories extends AppCompatActivity {
                         dbHelper.addStory(stm);
                         Toast.makeText(stories.this, "Shared successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), stories2.class);
+                        intent.putExtra("email",email);
                         startActivity(intent);
 
                     } catch (Exception e) {

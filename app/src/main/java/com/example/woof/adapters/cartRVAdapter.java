@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,7 +68,12 @@ public class cartRVAdapter extends RecyclerView.Adapter<cartRVAdapter.RVViewHold
 
     @Override
     public int getItemCount() {
-        return cartModelList.size();
+        try {
+            return cartModelList.size();
+        }catch (Exception e){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
     }
 
     public static class RVViewHolderClass extends RecyclerView.ViewHolder{

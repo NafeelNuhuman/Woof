@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -65,7 +66,15 @@ public class DogRVAdapter extends RecyclerView.Adapter<DogRVAdapter.RVViewHolder
     }
 
     @Override
-    public int getItemCount(){ return DogModelList.size(); }
+    public int getItemCount(){
+        try{
+            return DogModelList.size();
+        }catch (Exception e){
+            Toast.makeText(context, "No data", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
+    }
+
 
     public static class RVViewHolderClass extends RecyclerView.ViewHolder {
         private TextView dogName, dogBreed;
