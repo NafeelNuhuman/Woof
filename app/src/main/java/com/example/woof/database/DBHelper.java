@@ -34,8 +34,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + cartMaster.cart.TABLE_NAME + "(" +
                         cartMaster.cart.ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         cartMaster.cart.NAME + " TEXT, " +
-                        cartMaster.cart.IMAGE + " BLOB," +
                         cartMaster.cart.PRODUCT_QUANTITY + " INTEGER, " +
+                        cartMaster.cart.IMAGE + " BLOB," +
                         cartMaster.cart.PER_UNIT + " DOUBLE, " +
                         cartMaster.cart.TOTAL + " DOUBLE, " +
                         cartMaster.cart.USER_ID + " INTEGER)";
@@ -348,11 +348,46 @@ public class DBHelper extends SQLiteOpenHelper {
             return  null;
         }
     }
-    //retrieving all data
-    public Cursor alldata(){
+
+      //get total of all items in cart
+    public double getCartTotal() {
+        double totalCost = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(" SELECT  " + cartMaster.cart.TOTAL + " FROM " + cartMaster.cart.TABLE_NAME, null);
+        if (cursor.getCount() != 0 ){
+            while (cursor.moveToNext()){
+                double itemTotal = cursor.getDouble(0);
+                totalCost += itemTotal;
+            }
+            return totalCost;
+        }else {
+            return -99;
+        }
+    }
+
+
+
+    //retrieving cart
+    public ArrayList<cartModel> getCart(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + productMaster.product.TABLE_NAME , null);
-        return cursor;
+        ArrayList<cartModel> cartModelList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + cartMaster.cart.TABLE_NAME , null);
+        if(cursor.getCount() != 0){
+            while (cursor.moveToNext()){
+                int ID = cursor.getInt(0);
+                String name = cursor.getString(1);
+                int qty = cursor.getInt(2);
+                byte[] imageInBytes = cursor.getBlob(3);
+                double cost = cursor.getDouble(4);
+                double total = cursor.getDouble(5);
+                int userID = cursor.getInt(6);
+                Bitmap image = BitmapFactory.decodeByteArray(imageInBytes,0,imageInBytes.length);
+                cartModelList.add(new cartModel(ID,name,qty,image,cost,total,userID));
+            }
+            return cartModelList;
+        }else {
+            return null;
+        }
     }
 
     //insert dog
@@ -399,17 +434,19 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //delete accessory
-     public void deleteAccessory(String id){
+     public boolean deleteAccessory(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + " =?",new String[]{id});
-        if (result == -1){
-            Toast.makeText(context, "Delete Failed", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
-        }
+        long result = db.delete(productMaster.product.TABLE_NAME,productMaster.product.COLUMN_ID + " LIKE ?",new String[]{id});
+        return result != -1;
+    }
+    //delete item from cart
+    public boolean deleteCartItem(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(cartMaster.cart.TABLE_NAME,cartMaster.cart.ITEM_ID + " LIKE ?",new String[]{id});
+        return result != -1;
     }
 
-//retrieve dog
+    //retrieve dog
     public ArrayList<DogModel> getDogList(){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<DogModel> DogModelList = new ArrayList<>();

@@ -10,7 +10,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.woof.accessories.Accesories;
 import com.example.woof.R;
@@ -24,6 +26,7 @@ public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     static String email;
+    static int userID;
     public static final String MY_PREFS_NAME = "MyPrefsFile";
     RecyclerView rv1,rv2;
     AccRVAdapter accAdapter;
@@ -40,6 +43,7 @@ public class Home extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         Intent intent1 = getIntent();
         email = intent1.getStringExtra("email");
+        userID = dbHelper.getUserID(email);
 
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
         editor.putString("email", email);
@@ -49,7 +53,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void getData(){
-        accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this);
+        accAdapter = new AccRVAdapter(dbHelper.getProductList(),Home.this,this,userID);
         rv2.setHasFixedSize(true);
 
         rv2.setLayoutManager(new GridLayoutManager(this,2));
@@ -89,5 +93,9 @@ public class Home extends AppCompatActivity {
     }
 
     public  void  ClickUser(View view){ redirectActivity(this,userProfile.class);}
+
+    public  void  ClickCart(View view){
+        redirectActivity(this,cart.class);
+    }
 
 }
