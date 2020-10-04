@@ -30,7 +30,7 @@
 
 
         <Button
-            android:id="@+id/BtnDelete"
+            android:id="@+id/btndelete"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -38,6 +38,8 @@
             android:textColor="@color/design_default_color_background"
             app:backgroundTint="@color/deleteBtn"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/BtnUpdate"
             app:layout_constraintTop_toBottomOf="@+id/DogImage" />
 
         <ImageView
@@ -66,12 +68,11 @@
 
         <TextView
             android:id="@+id/DogAge"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:text="XXx
-"
+            android:layout_width="79dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:text="XX"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DogName" />
 
@@ -90,16 +91,19 @@
             android:id="@+id/DogBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
+            android:layout_marginStart="32dp"
             android:text="Breed"
-            app:layout_constraintBaseline_toBaselineOf="@+id/dogBreed"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/BtnUpdate"
+            app:layout_constraintStart_toEndOf="@+id/dogBreed"
+            app:layout_constraintTop_toBottomOf="@+id/DogAge"
+            app:layout_constraintVertical_bias="0.533" />
+
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="12dp"
             android:text="years old"
             app:layout_constraintBaseline_toBaselineOf="@+id/DogAge"
             app:layout_constraintStart_toEndOf="@+id/DogAge" />
