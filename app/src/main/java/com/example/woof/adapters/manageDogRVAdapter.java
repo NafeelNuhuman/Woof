@@ -28,14 +28,11 @@ public class manageDogRVAdapter extends RecyclerView.Adapter<manageDogRVAdapter.
     private static String id;
 
     public manageDogRVAdapter(ArrayList<DogModel> dogModelList, Context context, Activity activity) {
-        DogModelList = dogModelList;
+        this.DogModelList = dogModelList;
         this.context = context;
         this.activity = activity;
     }
 
-    public manageDogRVAdapter(ArrayList<DogModel> dogModelList) {
-        DogModelList = dogModelList;
-    }
 
     @NonNull
     @Override

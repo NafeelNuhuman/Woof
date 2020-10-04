@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,26 +22,28 @@ import com.example.woof.other.Home;
 import com.example.woof.stories.stories;
 
 
-
 public class manageMyDog extends AppCompatActivity {
-
+    private Activity activity;
+    private Context context;
     DrawerLayout drawerLayout;
     RecyclerView RV;
     DBHelper dbHelper;
     manageDogRVAdapter Adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_manage_my_dog);
-
+        setContentView(R.layout.activity_manage_my_dog);
+        activity = manageMyDog.this;
+        context = manageMyDog.this;
         drawerLayout = findViewById(R.id.drawer_layout);
         RV = findViewById(R.id.manageDogRV);
-      dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(this);
         this.getData();
     }
 
     private void getData() {
-        Adapter = new manageDogRVAdapter(dbHelper.getDogList());
+        Adapter = new manageDogRVAdapter(dbHelper.getDogList(),context,activity);
         RV.setHasFixedSize(true);
 
         RV.setLayoutManager(new LinearLayoutManager(this));
@@ -65,6 +68,7 @@ public class manageMyDog extends AppCompatActivity {
         activity.startActivity(intent);
 
     }
+
     public void ClickHome(View view) {
         redirectActivity(this, Home.class);
     }
