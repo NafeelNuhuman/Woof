@@ -61,8 +61,8 @@ public class Home extends AppCompatActivity {
         rv1.setHasFixedSize(true);
         rv2.setHasFixedSize(true);
 
-        rv1.setLayoutManager(new GridLayoutManager(this,2));
-        rv2.setLayoutManager(new GridLayoutManager(this,2));
+        rv1.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+        rv2.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
 
         rv1.setAdapter(dogAdapter);
         rv2.setAdapter(accAdapter);

@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorBG">
 
         <include
             android:id="@+id/include"
@@ -26,6 +27,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBG"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -46,15 +48,16 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@color/colorBG">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/homeRV1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            tools:listitem="@layout/activity_single_dog_card"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/activity_single_dog_card">
 
                         </androidx.recyclerview.widget.RecyclerView>
                     </LinearLayout>
@@ -74,19 +77,21 @@
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBG">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@color/colorBG">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/homeRV2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            tools:listitem="@layout/activity_single_accessory_card"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/activity_single_accessory_card">
 
                         </androidx.recyclerview.widget.RecyclerView>
                     </LinearLayout>

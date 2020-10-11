@@ -16,8 +16,7 @@
         <activity android:name=".dogs.manage_single_dog" />
         <activity android:name=".dogs.selectedDogview" />
         <activity android:name=".dogs.viewAllpets" />
-        <activity android:name=".dogs.addDog"
-            android:parentActivityName=".other.userProfile"/>
+        <activity android:name=".dogs.addDog" />
         <activity android:name=".dogs.manageMyDog"
             android:parentActivityName=".other.userProfile"/>
         <!-- Other -->

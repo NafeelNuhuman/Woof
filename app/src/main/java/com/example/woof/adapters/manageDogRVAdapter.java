@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.woof.R;
 import com.example.woof.database.DBHelper;
 import com.example.woof.database.DogModel;
+import com.example.woof.dogs.manageMyDog;
+import com.example.woof.other.userProfile;
 
 import java.util.ArrayList;
 
@@ -95,7 +98,16 @@ public class manageDogRVAdapter extends RecyclerView.Adapter<manageDogRVAdapter.
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dbHelper = new DBHelper(context);
-                dbHelper.deleteDog(id);
+                long Result = dbHelper.deleteDog(id);
+                if (Result == -1) {
+                    Toast.makeText(context, "Delete failed!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(context, "Data deleted Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, manageMyDog.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    activity.startActivity(intent);
+                }
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

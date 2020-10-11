@@ -14,8 +14,9 @@
         <include
             android:id="@+id/include_toolbar"
             layout="@layout/main_toolbar"
-            tools:layout_editor_absoluteX="-90dp"
-            tools:layout_editor_absoluteY="8dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -49,4 +50,11 @@
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/main_nav_drawer" />
+    </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

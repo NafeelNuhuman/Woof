@@ -17,6 +17,7 @@ import com.example.woof.database.DBHelper;
 import com.example.woof.database.DogMaster;
 import com.example.woof.accessories.Accesories;
 import com.example.woof.other.Home;
+import com.example.woof.other.cart;
 import com.example.woof.other.userProfile;
 import com.example.woof.stories.stories2;
 
@@ -51,7 +52,6 @@ public class viewAllpets extends AppCompatActivity {
 
     public void ClickMenu(View view) {
         openDrawer(drawerLayout);
-
     }
 
     public static void openDrawer(DrawerLayout drawerLayout) {
@@ -84,6 +84,10 @@ public class viewAllpets extends AppCompatActivity {
     }
 
     public  void  ClickUser(View view){ redirectActivity(this, userProfile.class);}
+
+    public  void  ClickCart(View view){
+        redirectActivity(this, cart.class);
+    }
 }
 
 

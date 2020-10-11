@@ -20,6 +20,7 @@ import com.example.woof.adapters.storiesRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.other.Home;
+import com.example.woof.other.cart;
 import com.example.woof.other.userProfile;
 
 import java.util.ArrayList;
@@ -97,11 +98,9 @@ public class stories2 extends AppCompatActivity {
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("email",email);
         activity.startActivity(intent);
-
     }
 
     public void ClickHome(View view) {
@@ -122,5 +121,8 @@ public class stories2 extends AppCompatActivity {
 
     public  void  ClickUser(View view){ redirectActivity(this, userProfile.class);}
 
+    public  void  ClickCart(View view){
+        redirectActivity(this, cart.class);
+    }
 
 }

@@ -19,6 +19,8 @@ import com.example.woof.accessories.Accesories;
 import com.example.woof.adapters.manageDogRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.other.Home;
+import com.example.woof.other.cart;
+import com.example.woof.other.userProfile;
 import com.example.woof.stories.stories;
 
 
@@ -43,7 +45,7 @@ public class manageMyDog extends AppCompatActivity {
     }
 
     private void getData() {
-        Adapter = new manageDogRVAdapter(dbHelper.getDogList(),context,activity);
+        Adapter = new manageDogRVAdapter(dbHelper.getDogList(), context, activity);
         RV.setHasFixedSize(true);
 
         RV.setLayoutManager(new LinearLayoutManager(this));
@@ -62,11 +64,8 @@ public class manageMyDog extends AppCompatActivity {
 
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         activity.startActivity(intent);
-
     }
 
     public void ClickHome(View view) {
@@ -85,4 +84,11 @@ public class manageMyDog extends AppCompatActivity {
         redirectActivity(this, stories.class);
     }
 
+    public void ClickUser(View view) {
+        redirectActivity(this, userProfile.class);
+    }
+
+    public void ClickCart(View view) {
+        redirectActivity(this, cart.class);
+    }
 }

@@ -19,20 +19,11 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="127dp"
+            android:layout_height="121dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:src="@mipmap/ic_launcher"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:text="User Name"
-            android:textStyle="bold"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"/>
+            android:src="@mipmap/ic_launcher" />
 
 
     </LinearLayout>

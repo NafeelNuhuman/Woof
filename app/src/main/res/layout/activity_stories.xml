@@ -87,7 +87,7 @@
         android:background="@drawable/edit_text_border"
         android:hint="@string/Title_Share"
         android:inputType="textPersonName"
-        android:maxLength="20"
+        android:maxLength="60"
         android:padding="10dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

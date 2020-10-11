@@ -23,6 +23,8 @@ import com.example.woof.adapters.storiesRVAdapter;
 import com.example.woof.database.DBHelper;
 import com.example.woof.dogs.viewAllpets;
 import com.example.woof.other.Home;
+import com.example.woof.other.cart;
+import com.example.woof.other.userProfile;
 
 import java.util.ArrayList;
 
@@ -34,7 +36,7 @@ public class mystories extends AppCompatActivity {
     private RecyclerView mys;
     private DBHelper dbHelper;
     Button  StoryDeletebtn;
-    private String email;
+    private static String email;
     private String userID;
     private String storyID;
     ArrayList<Integer> StoryID;
@@ -46,7 +48,7 @@ public class mystories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mystories);
         StoryDeletebtn=findViewById(R.id.StoryDeleteBtn);
-
+        drawerLayout = findViewById(R.id.drawer_layout);
         mys=findViewById(R.id.managemyStoriesV2);
 
         dbHelper = new DBHelper(this);
@@ -101,6 +103,7 @@ public class mystories extends AppCompatActivity {
     }
     private static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
+        intent.putExtra("email",email);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
 
@@ -119,6 +122,13 @@ public class mystories extends AppCompatActivity {
     }
 
     public void ClickStories(View view) {
-        recreate();
+        redirectActivity(this,stories2.class);
     }
+
+    public  void  ClickUser(View view){ redirectActivity(this, userProfile.class);}
+
+    public  void  ClickCart(View view){
+        redirectActivity(this, cart.class);
+    }
+
 }

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/MystorySingleCard"
     android:layout_width="match_parent"
+    android:layout_height="280dp"
     android:layout_marginLeft="30dp"
     android:layout_marginTop="15dp"
-    android:layout_marginBottom="10dp"
     android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="10dp"
-    android:layout_height="200dp"
     tools:context=".stories.single_manage_mystories_card">
 
 
@@ -20,15 +20,15 @@
 
         <TextView
             android:id="@+id/MyStoryDesc"
-            android:layout_width="315dp"
-            android:layout_height="59dp"
+            android:layout_width="318dp"
+            android:layout_height="112dp"
             android:fontFamily="@font/joti_one"
             android:text="@string/story_des_my_story"
             app:layout_constraintBottom_toTopOf="@+id/StoryDeleteBtn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/MyStoryTiTLE" />
+            app:layout_constraintTop_toBottomOf="@+id/MyStoryTiTLE"
+            app:layout_constraintVertical_bias="0.256" />
 
         <Button
             android:id="@+id/StoryDeleteBtn"
@@ -47,8 +47,8 @@
 
         <TextView
             android:id="@+id/MyStoryTiTLE"
-            android:layout_width="142dp"
-            android:layout_height="49dp"
+            android:layout_width="326dp"
+            android:layout_height="97dp"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/coiny"
             android:text="@string/Story"
@@ -60,5 +60,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
